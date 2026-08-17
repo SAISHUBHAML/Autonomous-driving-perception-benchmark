@@ -1,0 +1,47 @@
+# =============================================================================
+# Docker Compose — CARLA Simulator Server
+# CARLA-ROS2 Autonomous Driving Stack
+# =============================================================================
+
+version: '3.8'
+
+services:
+  carla-server:
+    image: carlasim/carla:0.9.15
+    container_name: carla-server
+    privileged: true
+    restart: unless-stopped
+    network_mode: host
+
+    # GPU access
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+    # Display forwarding (for windowed mode)
+    environment:
+      - DISPLAY=${DISPLAY:-:1}
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+
+    # CARLA server command
+    command: >
+      /bin/bash -c "./CarlaUE4.sh
+        -carla-rpc-port=2000
+        -quality-level=Epic
+        -nosound"
+
+    # Health check
+    healthcheck:
+      test: ["CMD-SHELL", "python3 -c \"import carla; carla.Client('localhost', 2000).get_server_version()\" || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s

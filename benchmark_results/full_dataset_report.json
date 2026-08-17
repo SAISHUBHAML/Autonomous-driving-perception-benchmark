@@ -1,0 +1,3521 @@
+{
+    "dataset_name": "Official nuScenes Benchmark Dataset",
+    "total_dataset_keyframes": 14012,
+    "epochs_trained": 10,
+    "dataset_split": {
+        "train_keyframes_70_pct": 9808,
+        "val_keyframes_15_pct": 2101,
+        "test_keyframes_15_pct": 2103
+    },
+    "model_performance": {
+        "val_map50": 94.5,
+        "val_map50_95": 71.82,
+        "test_camera_3d_mae_m": 1.055742,
+        "test_fused_ekf_3d_mae_m": 0.13475,
+        "test_mota_tracking_pct": 94.5,
+        "mean_test_latency_ms": 13.69,
+        "fps": 73.1
+    },
+    "test_frame_breakdown": [
+        {
+            "test_frame_id": 1,
+            "objects_count": 6,
+            "latency_ms": 14.27,
+            "camera_3d_mae_m": 1.081,
+            "fused_ekf_3d_mae_m": 0.148
+        },
+        {
+            "test_frame_id": 2,
+            "objects_count": 16,
+            "latency_ms": 13.76,
+            "camera_3d_mae_m": 1.27,
+            "fused_ekf_3d_mae_m": 0.171
+        },
+        {
+            "test_frame_id": 3,
+            "objects_count": 6,
+            "latency_ms": 14.45,
+            "camera_3d_mae_m": 0.922,
+            "fused_ekf_3d_mae_m": 0.138
+        },
+        {
+            "test_frame_id": 4,
+            "objects_count": 2,
+            "latency_ms": 13.76,
+            "camera_3d_mae_m": 1.861,
+            "fused_ekf_3d_mae_m": 0.313
+        },
+        {
+            "test_frame_id": 5,
+            "objects_count": 6,
+            "latency_ms": 13.17,
+            "camera_3d_mae_m": 0.894,
+            "fused_ekf_3d_mae_m": 0.123
+        },
+        {
+            "test_frame_id": 6,
+            "objects_count": 15,
+            "latency_ms": 14.09,
+            "camera_3d_mae_m": 0.816,
+            "fused_ekf_3d_mae_m": 0.115
+        },
+        {
+            "test_frame_id": 7,
+            "objects_count": 8,
+            "latency_ms": 13.8,
+            "camera_3d_mae_m": 1.238,
+            "fused_ekf_3d_mae_m": 0.183
+        },
+        {
+            "test_frame_id": 8,
+            "objects_count": 9,
+            "latency_ms": 14.56,
+            "camera_3d_mae_m": 1.506,
+            "fused_ekf_3d_mae_m": 0.205
+        },
+        {
+            "test_frame_id": 9,
+            "objects_count": 1,
+            "latency_ms": 16.23,
+            "camera_3d_mae_m": 0.829,
+            "fused_ekf_3d_mae_m": 0.146
+        },
+        {
+            "test_frame_id": 10,
+            "objects_count": 1,
+            "latency_ms": 14.48,
+            "camera_3d_mae_m": 0.175,
+            "fused_ekf_3d_mae_m": 0.046
+        },
+        {
+            "test_frame_id": 11,
+            "objects_count": 13,
+            "latency_ms": 13.21,
+            "camera_3d_mae_m": 1.76,
+            "fused_ekf_3d_mae_m": 0.244
+        },
+        {
+            "test_frame_id": 12,
+            "objects_count": 4,
+            "latency_ms": 13.61,
+            "camera_3d_mae_m": 1.013,
+            "fused_ekf_3d_mae_m": 0.118
+        },
+        {
+            "test_frame_id": 13,
+            "objects_count": 1,
+            "latency_ms": 14.95,
+            "camera_3d_mae_m": 1.215,
+            "fused_ekf_3d_mae_m": 0.181
+        },
+        {
+            "test_frame_id": 14,
+            "objects_count": 7,
+            "latency_ms": 14.09,
+            "camera_3d_mae_m": 1.343,
+            "fused_ekf_3d_mae_m": 0.195
+        },
+        {
+            "test_frame_id": 15,
+            "objects_count": 4,
+            "latency_ms": 13.97,
+            "camera_3d_mae_m": 1.417,
+            "fused_ekf_3d_mae_m": 0.204
+        },
+        {
+            "test_frame_id": 16,
+            "objects_count": 4,
+            "latency_ms": 14.73,
+            "camera_3d_mae_m": 0.878,
+            "fused_ekf_3d_mae_m": 0.15
+        },
+        {
+            "test_frame_id": 17,
+            "objects_count": 11,
+            "latency_ms": 14.16,
+            "camera_3d_mae_m": 1.681,
+            "fused_ekf_3d_mae_m": 0.257
+        },
+        {
+            "test_frame_id": 18,
+            "objects_count": 6,
+            "latency_ms": 14.39,
+            "camera_3d_mae_m": 1.099,
+            "fused_ekf_3d_mae_m": 0.158
+        },
+        {
+            "test_frame_id": 19,
+            "objects_count": 2,
+            "latency_ms": 14.83,
+            "camera_3d_mae_m": 3.088,
+            "fused_ekf_3d_mae_m": 0.416
+        },
+        {
+            "test_frame_id": 20,
+            "objects_count": 17,
+            "latency_ms": 14.04,
+            "camera_3d_mae_m": 1.82,
+            "fused_ekf_3d_mae_m": 0.255
+        },
+        {
+            "test_frame_id": 21,
+            "objects_count": 9,
+            "latency_ms": 13.42,
+            "camera_3d_mae_m": 1.288,
+            "fused_ekf_3d_mae_m": 0.188
+        },
+        {
+            "test_frame_id": 22,
+            "objects_count": 0,
+            "latency_ms": 13.03,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 23,
+            "objects_count": 10,
+            "latency_ms": 13.74,
+            "camera_3d_mae_m": 1.198,
+            "fused_ekf_3d_mae_m": 0.176
+        },
+        {
+            "test_frame_id": 24,
+            "objects_count": 7,
+            "latency_ms": 13.23,
+            "camera_3d_mae_m": 1.808,
+            "fused_ekf_3d_mae_m": 0.274
+        },
+        {
+            "test_frame_id": 25,
+            "objects_count": 21,
+            "latency_ms": 15.56,
+            "camera_3d_mae_m": 2.024,
+            "fused_ekf_3d_mae_m": 0.292
+        },
+        {
+            "test_frame_id": 26,
+            "objects_count": 3,
+            "latency_ms": 13.67,
+            "camera_3d_mae_m": 2.093,
+            "fused_ekf_3d_mae_m": 0.295
+        },
+        {
+            "test_frame_id": 27,
+            "objects_count": 21,
+            "latency_ms": 13.35,
+            "camera_3d_mae_m": 1.665,
+            "fused_ekf_3d_mae_m": 0.236
+        },
+        {
+            "test_frame_id": 28,
+            "objects_count": 8,
+            "latency_ms": 14.83,
+            "camera_3d_mae_m": 2.039,
+            "fused_ekf_3d_mae_m": 0.282
+        },
+        {
+            "test_frame_id": 29,
+            "objects_count": 0,
+            "latency_ms": 12.8,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 30,
+            "objects_count": 13,
+            "latency_ms": 13.81,
+            "camera_3d_mae_m": 1.087,
+            "fused_ekf_3d_mae_m": 0.161
+        },
+        {
+            "test_frame_id": 31,
+            "objects_count": 2,
+            "latency_ms": 13.49,
+            "camera_3d_mae_m": 2.806,
+            "fused_ekf_3d_mae_m": 0.395
+        },
+        {
+            "test_frame_id": 32,
+            "objects_count": 5,
+            "latency_ms": 14.08,
+            "camera_3d_mae_m": 0.813,
+            "fused_ekf_3d_mae_m": 0.142
+        },
+        {
+            "test_frame_id": 33,
+            "objects_count": 6,
+            "latency_ms": 13.74,
+            "camera_3d_mae_m": 1.479,
+            "fused_ekf_3d_mae_m": 0.22
+        },
+        {
+            "test_frame_id": 34,
+            "objects_count": 4,
+            "latency_ms": 14.4,
+            "camera_3d_mae_m": 2.035,
+            "fused_ekf_3d_mae_m": 0.281
+        },
+        {
+            "test_frame_id": 35,
+            "objects_count": 2,
+            "latency_ms": 13.81,
+            "camera_3d_mae_m": 0.93,
+            "fused_ekf_3d_mae_m": 0.151
+        },
+        {
+            "test_frame_id": 36,
+            "objects_count": 9,
+            "latency_ms": 13.65,
+            "camera_3d_mae_m": 0.892,
+            "fused_ekf_3d_mae_m": 0.126
+        },
+        {
+            "test_frame_id": 37,
+            "objects_count": 9,
+            "latency_ms": 14.68,
+            "camera_3d_mae_m": 1.147,
+            "fused_ekf_3d_mae_m": 0.166
+        },
+        {
+            "test_frame_id": 38,
+            "objects_count": 13,
+            "latency_ms": 14.44,
+            "camera_3d_mae_m": 1.224,
+            "fused_ekf_3d_mae_m": 0.179
+        },
+        {
+            "test_frame_id": 39,
+            "objects_count": 3,
+            "latency_ms": 14.25,
+            "camera_3d_mae_m": 1.348,
+            "fused_ekf_3d_mae_m": 0.206
+        },
+        {
+            "test_frame_id": 40,
+            "objects_count": 1,
+            "latency_ms": 14.43,
+            "camera_3d_mae_m": 1.532,
+            "fused_ekf_3d_mae_m": 0.282
+        },
+        {
+            "test_frame_id": 41,
+            "objects_count": 8,
+            "latency_ms": 14.71,
+            "camera_3d_mae_m": 1.089,
+            "fused_ekf_3d_mae_m": 0.152
+        },
+        {
+            "test_frame_id": 42,
+            "objects_count": 9,
+            "latency_ms": 16.29,
+            "camera_3d_mae_m": 1.239,
+            "fused_ekf_3d_mae_m": 0.156
+        },
+        {
+            "test_frame_id": 43,
+            "objects_count": 7,
+            "latency_ms": 15.5,
+            "camera_3d_mae_m": 0.808,
+            "fused_ekf_3d_mae_m": 0.118
+        },
+        {
+            "test_frame_id": 44,
+            "objects_count": 1,
+            "latency_ms": 13.99,
+            "camera_3d_mae_m": 0.257,
+            "fused_ekf_3d_mae_m": 0.028
+        },
+        {
+            "test_frame_id": 45,
+            "objects_count": 4,
+            "latency_ms": 13.57,
+            "camera_3d_mae_m": 1.961,
+            "fused_ekf_3d_mae_m": 0.287
+        },
+        {
+            "test_frame_id": 46,
+            "objects_count": 11,
+            "latency_ms": 14.3,
+            "camera_3d_mae_m": 1.74,
+            "fused_ekf_3d_mae_m": 0.249
+        },
+        {
+            "test_frame_id": 47,
+            "objects_count": 6,
+            "latency_ms": 13.36,
+            "camera_3d_mae_m": 1.078,
+            "fused_ekf_3d_mae_m": 0.158
+        },
+        {
+            "test_frame_id": 48,
+            "objects_count": 4,
+            "latency_ms": 14.03,
+            "camera_3d_mae_m": 1.812,
+            "fused_ekf_3d_mae_m": 0.262
+        },
+        {
+            "test_frame_id": 49,
+            "objects_count": 15,
+            "latency_ms": 15.66,
+            "camera_3d_mae_m": 1.954,
+            "fused_ekf_3d_mae_m": 0.284
+        },
+        {
+            "test_frame_id": 50,
+            "objects_count": 14,
+            "latency_ms": 13.49,
+            "camera_3d_mae_m": 0.975,
+            "fused_ekf_3d_mae_m": 0.135
+        },
+        {
+            "test_frame_id": 51,
+            "objects_count": 18,
+            "latency_ms": 14.23,
+            "camera_3d_mae_m": 1.249,
+            "fused_ekf_3d_mae_m": 0.176
+        },
+        {
+            "test_frame_id": 52,
+            "objects_count": 14,
+            "latency_ms": 14.11,
+            "camera_3d_mae_m": 1.572,
+            "fused_ekf_3d_mae_m": 0.236
+        },
+        {
+            "test_frame_id": 53,
+            "objects_count": 7,
+            "latency_ms": 13.45,
+            "camera_3d_mae_m": 1.77,
+            "fused_ekf_3d_mae_m": 0.246
+        },
+        {
+            "test_frame_id": 54,
+            "objects_count": 2,
+            "latency_ms": 25.08,
+            "camera_3d_mae_m": 0.844,
+            "fused_ekf_3d_mae_m": 0.114
+        },
+        {
+            "test_frame_id": 55,
+            "objects_count": 11,
+            "latency_ms": 15.3,
+            "camera_3d_mae_m": 1.166,
+            "fused_ekf_3d_mae_m": 0.158
+        },
+        {
+            "test_frame_id": 56,
+            "objects_count": 12,
+            "latency_ms": 14.79,
+            "camera_3d_mae_m": 1.733,
+            "fused_ekf_3d_mae_m": 0.257
+        },
+        {
+            "test_frame_id": 57,
+            "objects_count": 4,
+            "latency_ms": 14.91,
+            "camera_3d_mae_m": 1.725,
+            "fused_ekf_3d_mae_m": 0.245
+        },
+        {
+            "test_frame_id": 58,
+            "objects_count": 21,
+            "latency_ms": 15.31,
+            "camera_3d_mae_m": 1.473,
+            "fused_ekf_3d_mae_m": 0.201
+        },
+        {
+            "test_frame_id": 59,
+            "objects_count": 0,
+            "latency_ms": 13.56,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 60,
+            "objects_count": 10,
+            "latency_ms": 15.29,
+            "camera_3d_mae_m": 1.572,
+            "fused_ekf_3d_mae_m": 0.218
+        },
+        {
+            "test_frame_id": 61,
+            "objects_count": 1,
+            "latency_ms": 15.13,
+            "camera_3d_mae_m": 2.049,
+            "fused_ekf_3d_mae_m": 0.342
+        },
+        {
+            "test_frame_id": 62,
+            "objects_count": 5,
+            "latency_ms": 13.32,
+            "camera_3d_mae_m": 0.662,
+            "fused_ekf_3d_mae_m": 0.096
+        },
+        {
+            "test_frame_id": 63,
+            "objects_count": 6,
+            "latency_ms": 13.53,
+            "camera_3d_mae_m": 2.54,
+            "fused_ekf_3d_mae_m": 0.364
+        },
+        {
+            "test_frame_id": 64,
+            "objects_count": 15,
+            "latency_ms": 14.17,
+            "camera_3d_mae_m": 0.903,
+            "fused_ekf_3d_mae_m": 0.134
+        },
+        {
+            "test_frame_id": 65,
+            "objects_count": 6,
+            "latency_ms": 13.22,
+            "camera_3d_mae_m": 1.286,
+            "fused_ekf_3d_mae_m": 0.175
+        },
+        {
+            "test_frame_id": 66,
+            "objects_count": 10,
+            "latency_ms": 12.93,
+            "camera_3d_mae_m": 1.105,
+            "fused_ekf_3d_mae_m": 0.174
+        },
+        {
+            "test_frame_id": 67,
+            "objects_count": 2,
+            "latency_ms": 14.23,
+            "camera_3d_mae_m": 0.894,
+            "fused_ekf_3d_mae_m": 0.152
+        },
+        {
+            "test_frame_id": 68,
+            "objects_count": 15,
+            "latency_ms": 13.99,
+            "camera_3d_mae_m": 1.765,
+            "fused_ekf_3d_mae_m": 0.253
+        },
+        {
+            "test_frame_id": 69,
+            "objects_count": 4,
+            "latency_ms": 14.41,
+            "camera_3d_mae_m": 3.12,
+            "fused_ekf_3d_mae_m": 0.413
+        },
+        {
+            "test_frame_id": 70,
+            "objects_count": 4,
+            "latency_ms": 14.73,
+            "camera_3d_mae_m": 1.634,
+            "fused_ekf_3d_mae_m": 0.243
+        },
+        {
+            "test_frame_id": 71,
+            "objects_count": 2,
+            "latency_ms": 13.68,
+            "camera_3d_mae_m": 1.04,
+            "fused_ekf_3d_mae_m": 0.149
+        },
+        {
+            "test_frame_id": 72,
+            "objects_count": 10,
+            "latency_ms": 13.35,
+            "camera_3d_mae_m": 1.124,
+            "fused_ekf_3d_mae_m": 0.155
+        },
+        {
+            "test_frame_id": 73,
+            "objects_count": 2,
+            "latency_ms": 14.63,
+            "camera_3d_mae_m": 2.298,
+            "fused_ekf_3d_mae_m": 0.317
+        },
+        {
+            "test_frame_id": 74,
+            "objects_count": 5,
+            "latency_ms": 13.27,
+            "camera_3d_mae_m": 2.944,
+            "fused_ekf_3d_mae_m": 0.419
+        },
+        {
+            "test_frame_id": 75,
+            "objects_count": 3,
+            "latency_ms": 19.77,
+            "camera_3d_mae_m": 1.189,
+            "fused_ekf_3d_mae_m": 0.158
+        },
+        {
+            "test_frame_id": 76,
+            "objects_count": 10,
+            "latency_ms": 15.53,
+            "camera_3d_mae_m": 1.207,
+            "fused_ekf_3d_mae_m": 0.168
+        },
+        {
+            "test_frame_id": 77,
+            "objects_count": 2,
+            "latency_ms": 13.46,
+            "camera_3d_mae_m": 2.505,
+            "fused_ekf_3d_mae_m": 0.346
+        },
+        {
+            "test_frame_id": 78,
+            "objects_count": 2,
+            "latency_ms": 14.47,
+            "camera_3d_mae_m": 1.26,
+            "fused_ekf_3d_mae_m": 0.178
+        },
+        {
+            "test_frame_id": 79,
+            "objects_count": 9,
+            "latency_ms": 14.9,
+            "camera_3d_mae_m": 1.058,
+            "fused_ekf_3d_mae_m": 0.152
+        },
+        {
+            "test_frame_id": 80,
+            "objects_count": 1,
+            "latency_ms": 14.05,
+            "camera_3d_mae_m": 2.829,
+            "fused_ekf_3d_mae_m": 0.372
+        },
+        {
+            "test_frame_id": 81,
+            "objects_count": 3,
+            "latency_ms": 14.68,
+            "camera_3d_mae_m": 0.438,
+            "fused_ekf_3d_mae_m": 0.054
+        },
+        {
+            "test_frame_id": 82,
+            "objects_count": 1,
+            "latency_ms": 15.74,
+            "camera_3d_mae_m": 0.69,
+            "fused_ekf_3d_mae_m": 0.068
+        },
+        {
+            "test_frame_id": 83,
+            "objects_count": 2,
+            "latency_ms": 14.36,
+            "camera_3d_mae_m": 0.63,
+            "fused_ekf_3d_mae_m": 0.081
+        },
+        {
+            "test_frame_id": 84,
+            "objects_count": 2,
+            "latency_ms": 13.95,
+            "camera_3d_mae_m": 0.362,
+            "fused_ekf_3d_mae_m": 0.043
+        },
+        {
+            "test_frame_id": 85,
+            "objects_count": 0,
+            "latency_ms": 14.3,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 86,
+            "objects_count": 4,
+            "latency_ms": 14.2,
+            "camera_3d_mae_m": 1.06,
+            "fused_ekf_3d_mae_m": 0.152
+        },
+        {
+            "test_frame_id": 87,
+            "objects_count": 5,
+            "latency_ms": 13.77,
+            "camera_3d_mae_m": 0.727,
+            "fused_ekf_3d_mae_m": 0.107
+        },
+        {
+            "test_frame_id": 88,
+            "objects_count": 1,
+            "latency_ms": 15.49,
+            "camera_3d_mae_m": 0.695,
+            "fused_ekf_3d_mae_m": 0.121
+        },
+        {
+            "test_frame_id": 89,
+            "objects_count": 4,
+            "latency_ms": 14.25,
+            "camera_3d_mae_m": 0.397,
+            "fused_ekf_3d_mae_m": 0.07
+        },
+        {
+            "test_frame_id": 90,
+            "objects_count": 1,
+            "latency_ms": 13.67,
+            "camera_3d_mae_m": 0.874,
+            "fused_ekf_3d_mae_m": 0.148
+        },
+        {
+            "test_frame_id": 91,
+            "objects_count": 2,
+            "latency_ms": 14.32,
+            "camera_3d_mae_m": 2.369,
+            "fused_ekf_3d_mae_m": 0.337
+        },
+        {
+            "test_frame_id": 92,
+            "objects_count": 11,
+            "latency_ms": 13.2,
+            "camera_3d_mae_m": 0.605,
+            "fused_ekf_3d_mae_m": 0.096
+        },
+        {
+            "test_frame_id": 93,
+            "objects_count": 8,
+            "latency_ms": 14.5,
+            "camera_3d_mae_m": 0.758,
+            "fused_ekf_3d_mae_m": 0.107
+        },
+        {
+            "test_frame_id": 94,
+            "objects_count": 1,
+            "latency_ms": 14.86,
+            "camera_3d_mae_m": 0.233,
+            "fused_ekf_3d_mae_m": 0.013
+        },
+        {
+            "test_frame_id": 95,
+            "objects_count": 0,
+            "latency_ms": 13.87,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 96,
+            "objects_count": 2,
+            "latency_ms": 14.32,
+            "camera_3d_mae_m": 0.521,
+            "fused_ekf_3d_mae_m": 0.094
+        },
+        {
+            "test_frame_id": 97,
+            "objects_count": 0,
+            "latency_ms": 13.81,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 98,
+            "objects_count": 0,
+            "latency_ms": 12.99,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 99,
+            "objects_count": 9,
+            "latency_ms": 12.96,
+            "camera_3d_mae_m": 0.944,
+            "fused_ekf_3d_mae_m": 0.127
+        },
+        {
+            "test_frame_id": 100,
+            "objects_count": 2,
+            "latency_ms": 13.9,
+            "camera_3d_mae_m": 0.472,
+            "fused_ekf_3d_mae_m": 0.078
+        },
+        {
+            "test_frame_id": 101,
+            "objects_count": 4,
+            "latency_ms": 13.87,
+            "camera_3d_mae_m": 1.505,
+            "fused_ekf_3d_mae_m": 0.224
+        },
+        {
+            "test_frame_id": 102,
+            "objects_count": 1,
+            "latency_ms": 14.37,
+            "camera_3d_mae_m": 0.596,
+            "fused_ekf_3d_mae_m": 0.096
+        },
+        {
+            "test_frame_id": 103,
+            "objects_count": 8,
+            "latency_ms": 14.47,
+            "camera_3d_mae_m": 1.005,
+            "fused_ekf_3d_mae_m": 0.144
+        },
+        {
+            "test_frame_id": 104,
+            "objects_count": 0,
+            "latency_ms": 13.02,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 105,
+            "objects_count": 3,
+            "latency_ms": 15.91,
+            "camera_3d_mae_m": 0.52,
+            "fused_ekf_3d_mae_m": 0.076
+        },
+        {
+            "test_frame_id": 106,
+            "objects_count": 1,
+            "latency_ms": 20.08,
+            "camera_3d_mae_m": 0.016,
+            "fused_ekf_3d_mae_m": 0.043
+        },
+        {
+            "test_frame_id": 107,
+            "objects_count": 2,
+            "latency_ms": 13.97,
+            "camera_3d_mae_m": 0.464,
+            "fused_ekf_3d_mae_m": 0.073
+        },
+        {
+            "test_frame_id": 108,
+            "objects_count": 4,
+            "latency_ms": 13.64,
+            "camera_3d_mae_m": 1.019,
+            "fused_ekf_3d_mae_m": 0.159
+        },
+        {
+            "test_frame_id": 109,
+            "objects_count": 1,
+            "latency_ms": 14.22,
+            "camera_3d_mae_m": 0.499,
+            "fused_ekf_3d_mae_m": 0.039
+        },
+        {
+            "test_frame_id": 110,
+            "objects_count": 5,
+            "latency_ms": 14.09,
+            "camera_3d_mae_m": 0.843,
+            "fused_ekf_3d_mae_m": 0.092
+        },
+        {
+            "test_frame_id": 111,
+            "objects_count": 2,
+            "latency_ms": 14.3,
+            "camera_3d_mae_m": 1.883,
+            "fused_ekf_3d_mae_m": 0.283
+        },
+        {
+            "test_frame_id": 112,
+            "objects_count": 3,
+            "latency_ms": 14.33,
+            "camera_3d_mae_m": 0.539,
+            "fused_ekf_3d_mae_m": 0.068
+        },
+        {
+            "test_frame_id": 113,
+            "objects_count": 7,
+            "latency_ms": 14.23,
+            "camera_3d_mae_m": 0.635,
+            "fused_ekf_3d_mae_m": 0.078
+        },
+        {
+            "test_frame_id": 114,
+            "objects_count": 3,
+            "latency_ms": 13.21,
+            "camera_3d_mae_m": 0.478,
+            "fused_ekf_3d_mae_m": 0.063
+        },
+        {
+            "test_frame_id": 115,
+            "objects_count": 3,
+            "latency_ms": 14.43,
+            "camera_3d_mae_m": 0.803,
+            "fused_ekf_3d_mae_m": 0.119
+        },
+        {
+            "test_frame_id": 116,
+            "objects_count": 5,
+            "latency_ms": 14.35,
+            "camera_3d_mae_m": 0.791,
+            "fused_ekf_3d_mae_m": 0.106
+        },
+        {
+            "test_frame_id": 117,
+            "objects_count": 1,
+            "latency_ms": 15.88,
+            "camera_3d_mae_m": 0.265,
+            "fused_ekf_3d_mae_m": 0.066
+        },
+        {
+            "test_frame_id": 118,
+            "objects_count": 4,
+            "latency_ms": 17.66,
+            "camera_3d_mae_m": 0.446,
+            "fused_ekf_3d_mae_m": 0.074
+        },
+        {
+            "test_frame_id": 119,
+            "objects_count": 1,
+            "latency_ms": 13.67,
+            "camera_3d_mae_m": 3.165,
+            "fused_ekf_3d_mae_m": 0.461
+        },
+        {
+            "test_frame_id": 120,
+            "objects_count": 14,
+            "latency_ms": 13.09,
+            "camera_3d_mae_m": 0.489,
+            "fused_ekf_3d_mae_m": 0.063
+        },
+        {
+            "test_frame_id": 121,
+            "objects_count": 2,
+            "latency_ms": 13.91,
+            "camera_3d_mae_m": 0.476,
+            "fused_ekf_3d_mae_m": 0.067
+        },
+        {
+            "test_frame_id": 122,
+            "objects_count": 7,
+            "latency_ms": 14.21,
+            "camera_3d_mae_m": 0.77,
+            "fused_ekf_3d_mae_m": 0.114
+        },
+        {
+            "test_frame_id": 123,
+            "objects_count": 0,
+            "latency_ms": 12.77,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 124,
+            "objects_count": 4,
+            "latency_ms": 14.87,
+            "camera_3d_mae_m": 2.049,
+            "fused_ekf_3d_mae_m": 0.303
+        },
+        {
+            "test_frame_id": 125,
+            "objects_count": 3,
+            "latency_ms": 13.97,
+            "camera_3d_mae_m": 1.002,
+            "fused_ekf_3d_mae_m": 0.137
+        },
+        {
+            "test_frame_id": 126,
+            "objects_count": 0,
+            "latency_ms": 12.32,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 127,
+            "objects_count": 5,
+            "latency_ms": 14.89,
+            "camera_3d_mae_m": 0.3,
+            "fused_ekf_3d_mae_m": 0.052
+        },
+        {
+            "test_frame_id": 128,
+            "objects_count": 3,
+            "latency_ms": 14.05,
+            "camera_3d_mae_m": 0.791,
+            "fused_ekf_3d_mae_m": 0.101
+        },
+        {
+            "test_frame_id": 129,
+            "objects_count": 1,
+            "latency_ms": 12.91,
+            "camera_3d_mae_m": 0.99,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 130,
+            "objects_count": 2,
+            "latency_ms": 14.35,
+            "camera_3d_mae_m": 0.691,
+            "fused_ekf_3d_mae_m": 0.119
+        },
+        {
+            "test_frame_id": 131,
+            "objects_count": 2,
+            "latency_ms": 13.43,
+            "camera_3d_mae_m": 1.924,
+            "fused_ekf_3d_mae_m": 0.257
+        },
+        {
+            "test_frame_id": 132,
+            "objects_count": 9,
+            "latency_ms": 12.77,
+            "camera_3d_mae_m": 0.838,
+            "fused_ekf_3d_mae_m": 0.128
+        },
+        {
+            "test_frame_id": 133,
+            "objects_count": 4,
+            "latency_ms": 13.73,
+            "camera_3d_mae_m": 0.822,
+            "fused_ekf_3d_mae_m": 0.096
+        },
+        {
+            "test_frame_id": 134,
+            "objects_count": 5,
+            "latency_ms": 13.94,
+            "camera_3d_mae_m": 1.012,
+            "fused_ekf_3d_mae_m": 0.156
+        },
+        {
+            "test_frame_id": 135,
+            "objects_count": 2,
+            "latency_ms": 13.98,
+            "camera_3d_mae_m": 1.733,
+            "fused_ekf_3d_mae_m": 0.244
+        },
+        {
+            "test_frame_id": 136,
+            "objects_count": 7,
+            "latency_ms": 14.3,
+            "camera_3d_mae_m": 0.741,
+            "fused_ekf_3d_mae_m": 0.1
+        },
+        {
+            "test_frame_id": 137,
+            "objects_count": 1,
+            "latency_ms": 13.79,
+            "camera_3d_mae_m": 1.983,
+            "fused_ekf_3d_mae_m": 0.277
+        },
+        {
+            "test_frame_id": 138,
+            "objects_count": 8,
+            "latency_ms": 14.52,
+            "camera_3d_mae_m": 1.182,
+            "fused_ekf_3d_mae_m": 0.162
+        },
+        {
+            "test_frame_id": 139,
+            "objects_count": 0,
+            "latency_ms": 14.25,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 140,
+            "objects_count": 2,
+            "latency_ms": 13.54,
+            "camera_3d_mae_m": 0.493,
+            "fused_ekf_3d_mae_m": 0.058
+        },
+        {
+            "test_frame_id": 141,
+            "objects_count": 3,
+            "latency_ms": 13.49,
+            "camera_3d_mae_m": 1.653,
+            "fused_ekf_3d_mae_m": 0.258
+        },
+        {
+            "test_frame_id": 142,
+            "objects_count": 4,
+            "latency_ms": 14.81,
+            "camera_3d_mae_m": 0.392,
+            "fused_ekf_3d_mae_m": 0.042
+        },
+        {
+            "test_frame_id": 143,
+            "objects_count": 13,
+            "latency_ms": 14.48,
+            "camera_3d_mae_m": 0.58,
+            "fused_ekf_3d_mae_m": 0.091
+        },
+        {
+            "test_frame_id": 144,
+            "objects_count": 3,
+            "latency_ms": 13.72,
+            "camera_3d_mae_m": 0.954,
+            "fused_ekf_3d_mae_m": 0.15
+        },
+        {
+            "test_frame_id": 145,
+            "objects_count": 3,
+            "latency_ms": 14.47,
+            "camera_3d_mae_m": 0.456,
+            "fused_ekf_3d_mae_m": 0.069
+        },
+        {
+            "test_frame_id": 146,
+            "objects_count": 6,
+            "latency_ms": 14.06,
+            "camera_3d_mae_m": 0.438,
+            "fused_ekf_3d_mae_m": 0.063
+        },
+        {
+            "test_frame_id": 147,
+            "objects_count": 9,
+            "latency_ms": 13.3,
+            "camera_3d_mae_m": 0.755,
+            "fused_ekf_3d_mae_m": 0.099
+        },
+        {
+            "test_frame_id": 148,
+            "objects_count": 3,
+            "latency_ms": 15.28,
+            "camera_3d_mae_m": 1.606,
+            "fused_ekf_3d_mae_m": 0.208
+        },
+        {
+            "test_frame_id": 149,
+            "objects_count": 9,
+            "latency_ms": 14.09,
+            "camera_3d_mae_m": 1.065,
+            "fused_ekf_3d_mae_m": 0.165
+        },
+        {
+            "test_frame_id": 150,
+            "objects_count": 0,
+            "latency_ms": 12.92,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 151,
+            "objects_count": 9,
+            "latency_ms": 14.44,
+            "camera_3d_mae_m": 1.089,
+            "fused_ekf_3d_mae_m": 0.161
+        },
+        {
+            "test_frame_id": 152,
+            "objects_count": 4,
+            "latency_ms": 14.66,
+            "camera_3d_mae_m": 1.653,
+            "fused_ekf_3d_mae_m": 0.216
+        },
+        {
+            "test_frame_id": 153,
+            "objects_count": 2,
+            "latency_ms": 13.24,
+            "camera_3d_mae_m": 2.317,
+            "fused_ekf_3d_mae_m": 0.329
+        },
+        {
+            "test_frame_id": 154,
+            "objects_count": 12,
+            "latency_ms": 14.28,
+            "camera_3d_mae_m": 0.849,
+            "fused_ekf_3d_mae_m": 0.112
+        },
+        {
+            "test_frame_id": 155,
+            "objects_count": 1,
+            "latency_ms": 14.41,
+            "camera_3d_mae_m": 0.62,
+            "fused_ekf_3d_mae_m": 0.046
+        },
+        {
+            "test_frame_id": 156,
+            "objects_count": 3,
+            "latency_ms": 13.97,
+            "camera_3d_mae_m": 1.469,
+            "fused_ekf_3d_mae_m": 0.186
+        },
+        {
+            "test_frame_id": 157,
+            "objects_count": 5,
+            "latency_ms": 14.64,
+            "camera_3d_mae_m": 1.099,
+            "fused_ekf_3d_mae_m": 0.169
+        },
+        {
+            "test_frame_id": 158,
+            "objects_count": 3,
+            "latency_ms": 15.0,
+            "camera_3d_mae_m": 2.342,
+            "fused_ekf_3d_mae_m": 0.334
+        },
+        {
+            "test_frame_id": 159,
+            "objects_count": 1,
+            "latency_ms": 13.45,
+            "camera_3d_mae_m": 0.037,
+            "fused_ekf_3d_mae_m": 0.014
+        },
+        {
+            "test_frame_id": 160,
+            "objects_count": 6,
+            "latency_ms": 13.37,
+            "camera_3d_mae_m": 0.644,
+            "fused_ekf_3d_mae_m": 0.097
+        },
+        {
+            "test_frame_id": 161,
+            "objects_count": 2,
+            "latency_ms": 13.7,
+            "camera_3d_mae_m": 0.646,
+            "fused_ekf_3d_mae_m": 0.083
+        },
+        {
+            "test_frame_id": 162,
+            "objects_count": 3,
+            "latency_ms": 14.14,
+            "camera_3d_mae_m": 0.417,
+            "fused_ekf_3d_mae_m": 0.069
+        },
+        {
+            "test_frame_id": 163,
+            "objects_count": 4,
+            "latency_ms": 15.25,
+            "camera_3d_mae_m": 0.77,
+            "fused_ekf_3d_mae_m": 0.107
+        },
+        {
+            "test_frame_id": 164,
+            "objects_count": 0,
+            "latency_ms": 13.37,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 165,
+            "objects_count": 0,
+            "latency_ms": 13.01,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 166,
+            "objects_count": 8,
+            "latency_ms": 14.27,
+            "camera_3d_mae_m": 0.604,
+            "fused_ekf_3d_mae_m": 0.079
+        },
+        {
+            "test_frame_id": 167,
+            "objects_count": 0,
+            "latency_ms": 12.04,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 168,
+            "objects_count": 7,
+            "latency_ms": 13.05,
+            "camera_3d_mae_m": 0.868,
+            "fused_ekf_3d_mae_m": 0.122
+        },
+        {
+            "test_frame_id": 169,
+            "objects_count": 0,
+            "latency_ms": 12.72,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 170,
+            "objects_count": 5,
+            "latency_ms": 13.3,
+            "camera_3d_mae_m": 1.805,
+            "fused_ekf_3d_mae_m": 0.271
+        },
+        {
+            "test_frame_id": 171,
+            "objects_count": 1,
+            "latency_ms": 13.05,
+            "camera_3d_mae_m": 0.555,
+            "fused_ekf_3d_mae_m": 0.153
+        },
+        {
+            "test_frame_id": 172,
+            "objects_count": 0,
+            "latency_ms": 12.98,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 173,
+            "objects_count": 7,
+            "latency_ms": 13.38,
+            "camera_3d_mae_m": 0.776,
+            "fused_ekf_3d_mae_m": 0.092
+        },
+        {
+            "test_frame_id": 174,
+            "objects_count": 0,
+            "latency_ms": 12.15,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 175,
+            "objects_count": 3,
+            "latency_ms": 13.86,
+            "camera_3d_mae_m": 1.789,
+            "fused_ekf_3d_mae_m": 0.25
+        },
+        {
+            "test_frame_id": 176,
+            "objects_count": 0,
+            "latency_ms": 12.37,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 177,
+            "objects_count": 0,
+            "latency_ms": 12.43,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 178,
+            "objects_count": 9,
+            "latency_ms": 13.65,
+            "camera_3d_mae_m": 0.57,
+            "fused_ekf_3d_mae_m": 0.078
+        },
+        {
+            "test_frame_id": 179,
+            "objects_count": 6,
+            "latency_ms": 12.9,
+            "camera_3d_mae_m": 0.656,
+            "fused_ekf_3d_mae_m": 0.115
+        },
+        {
+            "test_frame_id": 180,
+            "objects_count": 0,
+            "latency_ms": 13.7,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 181,
+            "objects_count": 0,
+            "latency_ms": 12.74,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 182,
+            "objects_count": 0,
+            "latency_ms": 12.39,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 183,
+            "objects_count": 0,
+            "latency_ms": 12.45,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 184,
+            "objects_count": 2,
+            "latency_ms": 13.43,
+            "camera_3d_mae_m": 0.714,
+            "fused_ekf_3d_mae_m": 0.088
+        },
+        {
+            "test_frame_id": 185,
+            "objects_count": 5,
+            "latency_ms": 12.8,
+            "camera_3d_mae_m": 0.613,
+            "fused_ekf_3d_mae_m": 0.084
+        },
+        {
+            "test_frame_id": 186,
+            "objects_count": 2,
+            "latency_ms": 12.88,
+            "camera_3d_mae_m": 1.107,
+            "fused_ekf_3d_mae_m": 0.159
+        },
+        {
+            "test_frame_id": 187,
+            "objects_count": 2,
+            "latency_ms": 14.13,
+            "camera_3d_mae_m": 0.189,
+            "fused_ekf_3d_mae_m": 0.027
+        },
+        {
+            "test_frame_id": 188,
+            "objects_count": 1,
+            "latency_ms": 13.18,
+            "camera_3d_mae_m": 0.736,
+            "fused_ekf_3d_mae_m": 0.097
+        },
+        {
+            "test_frame_id": 189,
+            "objects_count": 0,
+            "latency_ms": 13.03,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 190,
+            "objects_count": 0,
+            "latency_ms": 13.76,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 191,
+            "objects_count": 1,
+            "latency_ms": 13.66,
+            "camera_3d_mae_m": 2.546,
+            "fused_ekf_3d_mae_m": 0.35
+        },
+        {
+            "test_frame_id": 192,
+            "objects_count": 1,
+            "latency_ms": 13.88,
+            "camera_3d_mae_m": 2.28,
+            "fused_ekf_3d_mae_m": 0.312
+        },
+        {
+            "test_frame_id": 193,
+            "objects_count": 1,
+            "latency_ms": 15.48,
+            "camera_3d_mae_m": 0.728,
+            "fused_ekf_3d_mae_m": 0.141
+        },
+        {
+            "test_frame_id": 194,
+            "objects_count": 1,
+            "latency_ms": 13.93,
+            "camera_3d_mae_m": 0.389,
+            "fused_ekf_3d_mae_m": 0.052
+        },
+        {
+            "test_frame_id": 195,
+            "objects_count": 3,
+            "latency_ms": 12.94,
+            "camera_3d_mae_m": 0.343,
+            "fused_ekf_3d_mae_m": 0.048
+        },
+        {
+            "test_frame_id": 196,
+            "objects_count": 1,
+            "latency_ms": 13.84,
+            "camera_3d_mae_m": 1.078,
+            "fused_ekf_3d_mae_m": 0.135
+        },
+        {
+            "test_frame_id": 197,
+            "objects_count": 0,
+            "latency_ms": 12.37,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 198,
+            "objects_count": 6,
+            "latency_ms": 12.72,
+            "camera_3d_mae_m": 0.89,
+            "fused_ekf_3d_mae_m": 0.122
+        },
+        {
+            "test_frame_id": 199,
+            "objects_count": 0,
+            "latency_ms": 13.01,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 200,
+            "objects_count": 2,
+            "latency_ms": 14.02,
+            "camera_3d_mae_m": 1.232,
+            "fused_ekf_3d_mae_m": 0.192
+        },
+        {
+            "test_frame_id": 201,
+            "objects_count": 1,
+            "latency_ms": 12.8,
+            "camera_3d_mae_m": 1.355,
+            "fused_ekf_3d_mae_m": 0.16
+        },
+        {
+            "test_frame_id": 202,
+            "objects_count": 2,
+            "latency_ms": 13.8,
+            "camera_3d_mae_m": 1.215,
+            "fused_ekf_3d_mae_m": 0.169
+        },
+        {
+            "test_frame_id": 203,
+            "objects_count": 1,
+            "latency_ms": 13.56,
+            "camera_3d_mae_m": 1.525,
+            "fused_ekf_3d_mae_m": 0.236
+        },
+        {
+            "test_frame_id": 204,
+            "objects_count": 0,
+            "latency_ms": 13.19,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 205,
+            "objects_count": 5,
+            "latency_ms": 14.82,
+            "camera_3d_mae_m": 0.701,
+            "fused_ekf_3d_mae_m": 0.116
+        },
+        {
+            "test_frame_id": 206,
+            "objects_count": 4,
+            "latency_ms": 13.64,
+            "camera_3d_mae_m": 0.756,
+            "fused_ekf_3d_mae_m": 0.095
+        },
+        {
+            "test_frame_id": 207,
+            "objects_count": 8,
+            "latency_ms": 12.76,
+            "camera_3d_mae_m": 0.485,
+            "fused_ekf_3d_mae_m": 0.075
+        },
+        {
+            "test_frame_id": 208,
+            "objects_count": 0,
+            "latency_ms": 13.19,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 209,
+            "objects_count": 0,
+            "latency_ms": 12.76,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 210,
+            "objects_count": 3,
+            "latency_ms": 13.7,
+            "camera_3d_mae_m": 0.779,
+            "fused_ekf_3d_mae_m": 0.084
+        },
+        {
+            "test_frame_id": 211,
+            "objects_count": 3,
+            "latency_ms": 14.57,
+            "camera_3d_mae_m": 0.436,
+            "fused_ekf_3d_mae_m": 0.084
+        },
+        {
+            "test_frame_id": 212,
+            "objects_count": 2,
+            "latency_ms": 14.1,
+            "camera_3d_mae_m": 0.737,
+            "fused_ekf_3d_mae_m": 0.11
+        },
+        {
+            "test_frame_id": 213,
+            "objects_count": 2,
+            "latency_ms": 13.79,
+            "camera_3d_mae_m": 0.201,
+            "fused_ekf_3d_mae_m": 0.034
+        },
+        {
+            "test_frame_id": 214,
+            "objects_count": 0,
+            "latency_ms": 13.13,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 215,
+            "objects_count": 4,
+            "latency_ms": 13.29,
+            "camera_3d_mae_m": 1.291,
+            "fused_ekf_3d_mae_m": 0.178
+        },
+        {
+            "test_frame_id": 216,
+            "objects_count": 0,
+            "latency_ms": 13.39,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 217,
+            "objects_count": 3,
+            "latency_ms": 14.82,
+            "camera_3d_mae_m": 0.459,
+            "fused_ekf_3d_mae_m": 0.064
+        },
+        {
+            "test_frame_id": 218,
+            "objects_count": 3,
+            "latency_ms": 14.48,
+            "camera_3d_mae_m": 0.523,
+            "fused_ekf_3d_mae_m": 0.057
+        },
+        {
+            "test_frame_id": 219,
+            "objects_count": 5,
+            "latency_ms": 13.89,
+            "camera_3d_mae_m": 0.509,
+            "fused_ekf_3d_mae_m": 0.086
+        },
+        {
+            "test_frame_id": 220,
+            "objects_count": 0,
+            "latency_ms": 13.31,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 221,
+            "objects_count": 0,
+            "latency_ms": 12.51,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 222,
+            "objects_count": 3,
+            "latency_ms": 14.7,
+            "camera_3d_mae_m": 0.37,
+            "fused_ekf_3d_mae_m": 0.06
+        },
+        {
+            "test_frame_id": 223,
+            "objects_count": 4,
+            "latency_ms": 14.87,
+            "camera_3d_mae_m": 0.638,
+            "fused_ekf_3d_mae_m": 0.102
+        },
+        {
+            "test_frame_id": 224,
+            "objects_count": 0,
+            "latency_ms": 12.66,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 225,
+            "objects_count": 0,
+            "latency_ms": 12.19,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 226,
+            "objects_count": 4,
+            "latency_ms": 13.56,
+            "camera_3d_mae_m": 1.074,
+            "fused_ekf_3d_mae_m": 0.16
+        },
+        {
+            "test_frame_id": 227,
+            "objects_count": 0,
+            "latency_ms": 11.93,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 228,
+            "objects_count": 4,
+            "latency_ms": 12.7,
+            "camera_3d_mae_m": 1.286,
+            "fused_ekf_3d_mae_m": 0.185
+        },
+        {
+            "test_frame_id": 229,
+            "objects_count": 0,
+            "latency_ms": 12.8,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 230,
+            "objects_count": 2,
+            "latency_ms": 12.9,
+            "camera_3d_mae_m": 1.805,
+            "fused_ekf_3d_mae_m": 0.269
+        },
+        {
+            "test_frame_id": 231,
+            "objects_count": 3,
+            "latency_ms": 12.46,
+            "camera_3d_mae_m": 2.902,
+            "fused_ekf_3d_mae_m": 0.409
+        },
+        {
+            "test_frame_id": 232,
+            "objects_count": 0,
+            "latency_ms": 12.83,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 233,
+            "objects_count": 7,
+            "latency_ms": 13.14,
+            "camera_3d_mae_m": 0.367,
+            "fused_ekf_3d_mae_m": 0.042
+        },
+        {
+            "test_frame_id": 234,
+            "objects_count": 1,
+            "latency_ms": 13.63,
+            "camera_3d_mae_m": 0.442,
+            "fused_ekf_3d_mae_m": 0.086
+        },
+        {
+            "test_frame_id": 235,
+            "objects_count": 4,
+            "latency_ms": 13.77,
+            "camera_3d_mae_m": 2.257,
+            "fused_ekf_3d_mae_m": 0.35
+        },
+        {
+            "test_frame_id": 236,
+            "objects_count": 2,
+            "latency_ms": 13.25,
+            "camera_3d_mae_m": 0.353,
+            "fused_ekf_3d_mae_m": 0.039
+        },
+        {
+            "test_frame_id": 237,
+            "objects_count": 2,
+            "latency_ms": 13.82,
+            "camera_3d_mae_m": 0.206,
+            "fused_ekf_3d_mae_m": 0.039
+        },
+        {
+            "test_frame_id": 238,
+            "objects_count": 2,
+            "latency_ms": 14.24,
+            "camera_3d_mae_m": 0.385,
+            "fused_ekf_3d_mae_m": 0.069
+        },
+        {
+            "test_frame_id": 239,
+            "objects_count": 7,
+            "latency_ms": 13.32,
+            "camera_3d_mae_m": 1.371,
+            "fused_ekf_3d_mae_m": 0.187
+        },
+        {
+            "test_frame_id": 240,
+            "objects_count": 0,
+            "latency_ms": 12.5,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 241,
+            "objects_count": 6,
+            "latency_ms": 14.61,
+            "camera_3d_mae_m": 0.875,
+            "fused_ekf_3d_mae_m": 0.119
+        },
+        {
+            "test_frame_id": 242,
+            "objects_count": 2,
+            "latency_ms": 14.23,
+            "camera_3d_mae_m": 0.217,
+            "fused_ekf_3d_mae_m": 0.057
+        },
+        {
+            "test_frame_id": 243,
+            "objects_count": 0,
+            "latency_ms": 12.86,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 244,
+            "objects_count": 9,
+            "latency_ms": 13.47,
+            "camera_3d_mae_m": 0.575,
+            "fused_ekf_3d_mae_m": 0.081
+        },
+        {
+            "test_frame_id": 245,
+            "objects_count": 0,
+            "latency_ms": 12.34,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 246,
+            "objects_count": 12,
+            "latency_ms": 13.74,
+            "camera_3d_mae_m": 0.873,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 247,
+            "objects_count": 11,
+            "latency_ms": 13.64,
+            "camera_3d_mae_m": 0.509,
+            "fused_ekf_3d_mae_m": 0.058
+        },
+        {
+            "test_frame_id": 248,
+            "objects_count": 0,
+            "latency_ms": 12.21,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 249,
+            "objects_count": 10,
+            "latency_ms": 13.1,
+            "camera_3d_mae_m": 0.99,
+            "fused_ekf_3d_mae_m": 0.138
+        },
+        {
+            "test_frame_id": 250,
+            "objects_count": 2,
+            "latency_ms": 15.28,
+            "camera_3d_mae_m": 0.326,
+            "fused_ekf_3d_mae_m": 0.018
+        },
+        {
+            "test_frame_id": 251,
+            "objects_count": 0,
+            "latency_ms": 12.27,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 252,
+            "objects_count": 2,
+            "latency_ms": 13.01,
+            "camera_3d_mae_m": 0.253,
+            "fused_ekf_3d_mae_m": 0.04
+        },
+        {
+            "test_frame_id": 253,
+            "objects_count": 3,
+            "latency_ms": 14.38,
+            "camera_3d_mae_m": 1.029,
+            "fused_ekf_3d_mae_m": 0.139
+        },
+        {
+            "test_frame_id": 254,
+            "objects_count": 4,
+            "latency_ms": 13.86,
+            "camera_3d_mae_m": 0.388,
+            "fused_ekf_3d_mae_m": 0.054
+        },
+        {
+            "test_frame_id": 255,
+            "objects_count": 2,
+            "latency_ms": 13.01,
+            "camera_3d_mae_m": 1.288,
+            "fused_ekf_3d_mae_m": 0.185
+        },
+        {
+            "test_frame_id": 256,
+            "objects_count": 10,
+            "latency_ms": 14.24,
+            "camera_3d_mae_m": 0.727,
+            "fused_ekf_3d_mae_m": 0.105
+        },
+        {
+            "test_frame_id": 257,
+            "objects_count": 3,
+            "latency_ms": 13.57,
+            "camera_3d_mae_m": 0.896,
+            "fused_ekf_3d_mae_m": 0.131
+        },
+        {
+            "test_frame_id": 258,
+            "objects_count": 0,
+            "latency_ms": 11.95,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 259,
+            "objects_count": 4,
+            "latency_ms": 14.47,
+            "camera_3d_mae_m": 0.499,
+            "fused_ekf_3d_mae_m": 0.076
+        },
+        {
+            "test_frame_id": 260,
+            "objects_count": 2,
+            "latency_ms": 13.55,
+            "camera_3d_mae_m": 0.866,
+            "fused_ekf_3d_mae_m": 0.137
+        },
+        {
+            "test_frame_id": 261,
+            "objects_count": 1,
+            "latency_ms": 13.04,
+            "camera_3d_mae_m": 1.714,
+            "fused_ekf_3d_mae_m": 0.241
+        },
+        {
+            "test_frame_id": 262,
+            "objects_count": 0,
+            "latency_ms": 12.98,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 263,
+            "objects_count": 2,
+            "latency_ms": 13.38,
+            "camera_3d_mae_m": 0.668,
+            "fused_ekf_3d_mae_m": 0.089
+        },
+        {
+            "test_frame_id": 264,
+            "objects_count": 0,
+            "latency_ms": 12.37,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 265,
+            "objects_count": 6,
+            "latency_ms": 13.74,
+            "camera_3d_mae_m": 0.435,
+            "fused_ekf_3d_mae_m": 0.065
+        },
+        {
+            "test_frame_id": 266,
+            "objects_count": 0,
+            "latency_ms": 12.24,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 267,
+            "objects_count": 3,
+            "latency_ms": 13.77,
+            "camera_3d_mae_m": 0.897,
+            "fused_ekf_3d_mae_m": 0.151
+        },
+        {
+            "test_frame_id": 268,
+            "objects_count": 0,
+            "latency_ms": 12.98,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 269,
+            "objects_count": 10,
+            "latency_ms": 13.22,
+            "camera_3d_mae_m": 0.824,
+            "fused_ekf_3d_mae_m": 0.11
+        },
+        {
+            "test_frame_id": 270,
+            "objects_count": 8,
+            "latency_ms": 12.72,
+            "camera_3d_mae_m": 0.893,
+            "fused_ekf_3d_mae_m": 0.123
+        },
+        {
+            "test_frame_id": 271,
+            "objects_count": 5,
+            "latency_ms": 13.36,
+            "camera_3d_mae_m": 0.818,
+            "fused_ekf_3d_mae_m": 0.115
+        },
+        {
+            "test_frame_id": 272,
+            "objects_count": 2,
+            "latency_ms": 12.53,
+            "camera_3d_mae_m": 0.795,
+            "fused_ekf_3d_mae_m": 0.079
+        },
+        {
+            "test_frame_id": 273,
+            "objects_count": 8,
+            "latency_ms": 13.61,
+            "camera_3d_mae_m": 1.117,
+            "fused_ekf_3d_mae_m": 0.158
+        },
+        {
+            "test_frame_id": 274,
+            "objects_count": 0,
+            "latency_ms": 12.69,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 275,
+            "objects_count": 4,
+            "latency_ms": 12.33,
+            "camera_3d_mae_m": 0.438,
+            "fused_ekf_3d_mae_m": 0.061
+        },
+        {
+            "test_frame_id": 276,
+            "objects_count": 4,
+            "latency_ms": 12.65,
+            "camera_3d_mae_m": 0.47,
+            "fused_ekf_3d_mae_m": 0.045
+        },
+        {
+            "test_frame_id": 277,
+            "objects_count": 4,
+            "latency_ms": 13.09,
+            "camera_3d_mae_m": 0.713,
+            "fused_ekf_3d_mae_m": 0.089
+        },
+        {
+            "test_frame_id": 278,
+            "objects_count": 2,
+            "latency_ms": 12.6,
+            "camera_3d_mae_m": 0.742,
+            "fused_ekf_3d_mae_m": 0.079
+        },
+        {
+            "test_frame_id": 279,
+            "objects_count": 0,
+            "latency_ms": 12.02,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 280,
+            "objects_count": 0,
+            "latency_ms": 13.05,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 281,
+            "objects_count": 3,
+            "latency_ms": 13.4,
+            "camera_3d_mae_m": 2.141,
+            "fused_ekf_3d_mae_m": 0.305
+        },
+        {
+            "test_frame_id": 282,
+            "objects_count": 2,
+            "latency_ms": 12.87,
+            "camera_3d_mae_m": 0.136,
+            "fused_ekf_3d_mae_m": 0.024
+        },
+        {
+            "test_frame_id": 283,
+            "objects_count": 9,
+            "latency_ms": 14.29,
+            "camera_3d_mae_m": 0.605,
+            "fused_ekf_3d_mae_m": 0.095
+        },
+        {
+            "test_frame_id": 284,
+            "objects_count": 0,
+            "latency_ms": 14.08,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 285,
+            "objects_count": 1,
+            "latency_ms": 13.34,
+            "camera_3d_mae_m": 0.428,
+            "fused_ekf_3d_mae_m": 0.063
+        },
+        {
+            "test_frame_id": 286,
+            "objects_count": 0,
+            "latency_ms": 14.14,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 287,
+            "objects_count": 1,
+            "latency_ms": 13.84,
+            "camera_3d_mae_m": 1.424,
+            "fused_ekf_3d_mae_m": 0.181
+        },
+        {
+            "test_frame_id": 288,
+            "objects_count": 2,
+            "latency_ms": 12.87,
+            "camera_3d_mae_m": 0.286,
+            "fused_ekf_3d_mae_m": 0.032
+        },
+        {
+            "test_frame_id": 289,
+            "objects_count": 1,
+            "latency_ms": 13.73,
+            "camera_3d_mae_m": 0.509,
+            "fused_ekf_3d_mae_m": 0.063
+        },
+        {
+            "test_frame_id": 290,
+            "objects_count": 4,
+            "latency_ms": 13.34,
+            "camera_3d_mae_m": 0.948,
+            "fused_ekf_3d_mae_m": 0.119
+        },
+        {
+            "test_frame_id": 291,
+            "objects_count": 0,
+            "latency_ms": 12.34,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 292,
+            "objects_count": 2,
+            "latency_ms": 13.78,
+            "camera_3d_mae_m": 1.328,
+            "fused_ekf_3d_mae_m": 0.193
+        },
+        {
+            "test_frame_id": 293,
+            "objects_count": 4,
+            "latency_ms": 13.15,
+            "camera_3d_mae_m": 1.374,
+            "fused_ekf_3d_mae_m": 0.207
+        },
+        {
+            "test_frame_id": 294,
+            "objects_count": 1,
+            "latency_ms": 13.49,
+            "camera_3d_mae_m": 2.363,
+            "fused_ekf_3d_mae_m": 0.354
+        },
+        {
+            "test_frame_id": 295,
+            "objects_count": 0,
+            "latency_ms": 13.1,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 296,
+            "objects_count": 5,
+            "latency_ms": 13.27,
+            "camera_3d_mae_m": 0.614,
+            "fused_ekf_3d_mae_m": 0.091
+        },
+        {
+            "test_frame_id": 297,
+            "objects_count": 3,
+            "latency_ms": 13.61,
+            "camera_3d_mae_m": 0.348,
+            "fused_ekf_3d_mae_m": 0.058
+        },
+        {
+            "test_frame_id": 298,
+            "objects_count": 3,
+            "latency_ms": 13.84,
+            "camera_3d_mae_m": 0.744,
+            "fused_ekf_3d_mae_m": 0.088
+        },
+        {
+            "test_frame_id": 299,
+            "objects_count": 9,
+            "latency_ms": 13.29,
+            "camera_3d_mae_m": 0.992,
+            "fused_ekf_3d_mae_m": 0.137
+        },
+        {
+            "test_frame_id": 300,
+            "objects_count": 0,
+            "latency_ms": 11.6,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 301,
+            "objects_count": 3,
+            "latency_ms": 13.75,
+            "camera_3d_mae_m": 0.966,
+            "fused_ekf_3d_mae_m": 0.142
+        },
+        {
+            "test_frame_id": 302,
+            "objects_count": 2,
+            "latency_ms": 15.0,
+            "camera_3d_mae_m": 0.64,
+            "fused_ekf_3d_mae_m": 0.089
+        },
+        {
+            "test_frame_id": 303,
+            "objects_count": 3,
+            "latency_ms": 13.83,
+            "camera_3d_mae_m": 0.525,
+            "fused_ekf_3d_mae_m": 0.069
+        },
+        {
+            "test_frame_id": 304,
+            "objects_count": 0,
+            "latency_ms": 13.21,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 305,
+            "objects_count": 0,
+            "latency_ms": 13.28,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 306,
+            "objects_count": 5,
+            "latency_ms": 13.49,
+            "camera_3d_mae_m": 0.529,
+            "fused_ekf_3d_mae_m": 0.061
+        },
+        {
+            "test_frame_id": 307,
+            "objects_count": 6,
+            "latency_ms": 14.3,
+            "camera_3d_mae_m": 0.832,
+            "fused_ekf_3d_mae_m": 0.114
+        },
+        {
+            "test_frame_id": 308,
+            "objects_count": 9,
+            "latency_ms": 13.27,
+            "camera_3d_mae_m": 0.73,
+            "fused_ekf_3d_mae_m": 0.103
+        },
+        {
+            "test_frame_id": 309,
+            "objects_count": 1,
+            "latency_ms": 15.32,
+            "camera_3d_mae_m": 0.072,
+            "fused_ekf_3d_mae_m": 0.013
+        },
+        {
+            "test_frame_id": 310,
+            "objects_count": 11,
+            "latency_ms": 15.29,
+            "camera_3d_mae_m": 0.941,
+            "fused_ekf_3d_mae_m": 0.13
+        },
+        {
+            "test_frame_id": 311,
+            "objects_count": 1,
+            "latency_ms": 13.33,
+            "camera_3d_mae_m": 0.844,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 312,
+            "objects_count": 4,
+            "latency_ms": 13.17,
+            "camera_3d_mae_m": 0.886,
+            "fused_ekf_3d_mae_m": 0.128
+        },
+        {
+            "test_frame_id": 313,
+            "objects_count": 0,
+            "latency_ms": 14.05,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 314,
+            "objects_count": 0,
+            "latency_ms": 12.86,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 315,
+            "objects_count": 2,
+            "latency_ms": 12.74,
+            "camera_3d_mae_m": 0.404,
+            "fused_ekf_3d_mae_m": 0.06
+        },
+        {
+            "test_frame_id": 316,
+            "objects_count": 1,
+            "latency_ms": 13.7,
+            "camera_3d_mae_m": 2.439,
+            "fused_ekf_3d_mae_m": 0.36
+        },
+        {
+            "test_frame_id": 317,
+            "objects_count": 6,
+            "latency_ms": 12.81,
+            "camera_3d_mae_m": 0.615,
+            "fused_ekf_3d_mae_m": 0.088
+        },
+        {
+            "test_frame_id": 318,
+            "objects_count": 10,
+            "latency_ms": 12.97,
+            "camera_3d_mae_m": 0.345,
+            "fused_ekf_3d_mae_m": 0.04
+        },
+        {
+            "test_frame_id": 319,
+            "objects_count": 2,
+            "latency_ms": 13.66,
+            "camera_3d_mae_m": 1.584,
+            "fused_ekf_3d_mae_m": 0.248
+        },
+        {
+            "test_frame_id": 320,
+            "objects_count": 3,
+            "latency_ms": 13.07,
+            "camera_3d_mae_m": 0.554,
+            "fused_ekf_3d_mae_m": 0.085
+        },
+        {
+            "test_frame_id": 321,
+            "objects_count": 2,
+            "latency_ms": 12.88,
+            "camera_3d_mae_m": 0.286,
+            "fused_ekf_3d_mae_m": 0.061
+        },
+        {
+            "test_frame_id": 322,
+            "objects_count": 0,
+            "latency_ms": 13.32,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 323,
+            "objects_count": 1,
+            "latency_ms": 13.89,
+            "camera_3d_mae_m": 0.246,
+            "fused_ekf_3d_mae_m": 0.042
+        },
+        {
+            "test_frame_id": 324,
+            "objects_count": 8,
+            "latency_ms": 13.54,
+            "camera_3d_mae_m": 0.914,
+            "fused_ekf_3d_mae_m": 0.128
+        },
+        {
+            "test_frame_id": 325,
+            "objects_count": 3,
+            "latency_ms": 14.95,
+            "camera_3d_mae_m": 0.367,
+            "fused_ekf_3d_mae_m": 0.052
+        },
+        {
+            "test_frame_id": 326,
+            "objects_count": 3,
+            "latency_ms": 14.39,
+            "camera_3d_mae_m": 0.709,
+            "fused_ekf_3d_mae_m": 0.09
+        },
+        {
+            "test_frame_id": 327,
+            "objects_count": 3,
+            "latency_ms": 15.54,
+            "camera_3d_mae_m": 1.011,
+            "fused_ekf_3d_mae_m": 0.133
+        },
+        {
+            "test_frame_id": 328,
+            "objects_count": 4,
+            "latency_ms": 14.23,
+            "camera_3d_mae_m": 0.622,
+            "fused_ekf_3d_mae_m": 0.101
+        },
+        {
+            "test_frame_id": 329,
+            "objects_count": 1,
+            "latency_ms": 13.79,
+            "camera_3d_mae_m": 0.14,
+            "fused_ekf_3d_mae_m": 0.037
+        },
+        {
+            "test_frame_id": 330,
+            "objects_count": 2,
+            "latency_ms": 12.74,
+            "camera_3d_mae_m": 0.228,
+            "fused_ekf_3d_mae_m": 0.033
+        },
+        {
+            "test_frame_id": 331,
+            "objects_count": 1,
+            "latency_ms": 14.04,
+            "camera_3d_mae_m": 0.301,
+            "fused_ekf_3d_mae_m": 0.017
+        },
+        {
+            "test_frame_id": 332,
+            "objects_count": 10,
+            "latency_ms": 14.66,
+            "camera_3d_mae_m": 0.493,
+            "fused_ekf_3d_mae_m": 0.072
+        },
+        {
+            "test_frame_id": 333,
+            "objects_count": 10,
+            "latency_ms": 14.11,
+            "camera_3d_mae_m": 0.754,
+            "fused_ekf_3d_mae_m": 0.099
+        },
+        {
+            "test_frame_id": 334,
+            "objects_count": 1,
+            "latency_ms": 13.78,
+            "camera_3d_mae_m": 1.855,
+            "fused_ekf_3d_mae_m": 0.296
+        },
+        {
+            "test_frame_id": 335,
+            "objects_count": 8,
+            "latency_ms": 13.63,
+            "camera_3d_mae_m": 0.798,
+            "fused_ekf_3d_mae_m": 0.115
+        },
+        {
+            "test_frame_id": 336,
+            "objects_count": 0,
+            "latency_ms": 12.09,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 337,
+            "objects_count": 13,
+            "latency_ms": 13.61,
+            "camera_3d_mae_m": 0.89,
+            "fused_ekf_3d_mae_m": 0.119
+        },
+        {
+            "test_frame_id": 338,
+            "objects_count": 0,
+            "latency_ms": 12.2,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 339,
+            "objects_count": 7,
+            "latency_ms": 13.06,
+            "camera_3d_mae_m": 0.668,
+            "fused_ekf_3d_mae_m": 0.105
+        },
+        {
+            "test_frame_id": 340,
+            "objects_count": 2,
+            "latency_ms": 14.24,
+            "camera_3d_mae_m": 2.071,
+            "fused_ekf_3d_mae_m": 0.249
+        },
+        {
+            "test_frame_id": 341,
+            "objects_count": 1,
+            "latency_ms": 13.81,
+            "camera_3d_mae_m": 0.314,
+            "fused_ekf_3d_mae_m": 0.034
+        },
+        {
+            "test_frame_id": 342,
+            "objects_count": 1,
+            "latency_ms": 15.1,
+            "camera_3d_mae_m": 0.325,
+            "fused_ekf_3d_mae_m": 0.048
+        },
+        {
+            "test_frame_id": 343,
+            "objects_count": 0,
+            "latency_ms": 13.86,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 344,
+            "objects_count": 5,
+            "latency_ms": 13.57,
+            "camera_3d_mae_m": 0.478,
+            "fused_ekf_3d_mae_m": 0.063
+        },
+        {
+            "test_frame_id": 345,
+            "objects_count": 0,
+            "latency_ms": 12.42,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 346,
+            "objects_count": 8,
+            "latency_ms": 15.18,
+            "camera_3d_mae_m": 1.27,
+            "fused_ekf_3d_mae_m": 0.191
+        },
+        {
+            "test_frame_id": 347,
+            "objects_count": 1,
+            "latency_ms": 14.63,
+            "camera_3d_mae_m": 2.32,
+            "fused_ekf_3d_mae_m": 0.377
+        },
+        {
+            "test_frame_id": 348,
+            "objects_count": 4,
+            "latency_ms": 13.24,
+            "camera_3d_mae_m": 0.64,
+            "fused_ekf_3d_mae_m": 0.091
+        },
+        {
+            "test_frame_id": 349,
+            "objects_count": 2,
+            "latency_ms": 13.94,
+            "camera_3d_mae_m": 0.099,
+            "fused_ekf_3d_mae_m": 0.034
+        },
+        {
+            "test_frame_id": 350,
+            "objects_count": 9,
+            "latency_ms": 13.02,
+            "camera_3d_mae_m": 0.401,
+            "fused_ekf_3d_mae_m": 0.05
+        },
+        {
+            "test_frame_id": 351,
+            "objects_count": 2,
+            "latency_ms": 13.66,
+            "camera_3d_mae_m": 0.444,
+            "fused_ekf_3d_mae_m": 0.067
+        },
+        {
+            "test_frame_id": 352,
+            "objects_count": 5,
+            "latency_ms": 14.32,
+            "camera_3d_mae_m": 1.228,
+            "fused_ekf_3d_mae_m": 0.175
+        },
+        {
+            "test_frame_id": 353,
+            "objects_count": 2,
+            "latency_ms": 13.08,
+            "camera_3d_mae_m": 0.546,
+            "fused_ekf_3d_mae_m": 0.057
+        },
+        {
+            "test_frame_id": 354,
+            "objects_count": 0,
+            "latency_ms": 11.55,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 355,
+            "objects_count": 9,
+            "latency_ms": 14.57,
+            "camera_3d_mae_m": 0.804,
+            "fused_ekf_3d_mae_m": 0.102
+        },
+        {
+            "test_frame_id": 356,
+            "objects_count": 0,
+            "latency_ms": 12.63,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 357,
+            "objects_count": 3,
+            "latency_ms": 13.82,
+            "camera_3d_mae_m": 0.802,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 358,
+            "objects_count": 2,
+            "latency_ms": 14.38,
+            "camera_3d_mae_m": 0.585,
+            "fused_ekf_3d_mae_m": 0.07
+        },
+        {
+            "test_frame_id": 359,
+            "objects_count": 3,
+            "latency_ms": 14.2,
+            "camera_3d_mae_m": 0.469,
+            "fused_ekf_3d_mae_m": 0.077
+        },
+        {
+            "test_frame_id": 360,
+            "objects_count": 1,
+            "latency_ms": 13.81,
+            "camera_3d_mae_m": 0.135,
+            "fused_ekf_3d_mae_m": 0.019
+        },
+        {
+            "test_frame_id": 361,
+            "objects_count": 1,
+            "latency_ms": 13.92,
+            "camera_3d_mae_m": 2.309,
+            "fused_ekf_3d_mae_m": 0.286
+        },
+        {
+            "test_frame_id": 362,
+            "objects_count": 3,
+            "latency_ms": 13.39,
+            "camera_3d_mae_m": 0.354,
+            "fused_ekf_3d_mae_m": 0.051
+        },
+        {
+            "test_frame_id": 363,
+            "objects_count": 1,
+            "latency_ms": 13.51,
+            "camera_3d_mae_m": 0.166,
+            "fused_ekf_3d_mae_m": 0.014
+        },
+        {
+            "test_frame_id": 364,
+            "objects_count": 3,
+            "latency_ms": 14.2,
+            "camera_3d_mae_m": 0.779,
+            "fused_ekf_3d_mae_m": 0.136
+        },
+        {
+            "test_frame_id": 365,
+            "objects_count": 6,
+            "latency_ms": 14.08,
+            "camera_3d_mae_m": 1.522,
+            "fused_ekf_3d_mae_m": 0.224
+        },
+        {
+            "test_frame_id": 366,
+            "objects_count": 0,
+            "latency_ms": 12.81,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 367,
+            "objects_count": 0,
+            "latency_ms": 13.33,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 368,
+            "objects_count": 1,
+            "latency_ms": 14.46,
+            "camera_3d_mae_m": 0.827,
+            "fused_ekf_3d_mae_m": 0.115
+        },
+        {
+            "test_frame_id": 369,
+            "objects_count": 4,
+            "latency_ms": 14.4,
+            "camera_3d_mae_m": 0.296,
+            "fused_ekf_3d_mae_m": 0.088
+        },
+        {
+            "test_frame_id": 370,
+            "objects_count": 1,
+            "latency_ms": 13.64,
+            "camera_3d_mae_m": 1.937,
+            "fused_ekf_3d_mae_m": 0.261
+        },
+        {
+            "test_frame_id": 371,
+            "objects_count": 4,
+            "latency_ms": 13.16,
+            "camera_3d_mae_m": 0.412,
+            "fused_ekf_3d_mae_m": 0.06
+        },
+        {
+            "test_frame_id": 372,
+            "objects_count": 3,
+            "latency_ms": 12.89,
+            "camera_3d_mae_m": 1.395,
+            "fused_ekf_3d_mae_m": 0.211
+        },
+        {
+            "test_frame_id": 373,
+            "objects_count": 8,
+            "latency_ms": 13.82,
+            "camera_3d_mae_m": 0.865,
+            "fused_ekf_3d_mae_m": 0.11
+        },
+        {
+            "test_frame_id": 374,
+            "objects_count": 15,
+            "latency_ms": 13.24,
+            "camera_3d_mae_m": 0.366,
+            "fused_ekf_3d_mae_m": 0.048
+        },
+        {
+            "test_frame_id": 375,
+            "objects_count": 0,
+            "latency_ms": 11.98,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 376,
+            "objects_count": 0,
+            "latency_ms": 13.41,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 377,
+            "objects_count": 3,
+            "latency_ms": 14.59,
+            "camera_3d_mae_m": 2.246,
+            "fused_ekf_3d_mae_m": 0.331
+        },
+        {
+            "test_frame_id": 378,
+            "objects_count": 5,
+            "latency_ms": 13.52,
+            "camera_3d_mae_m": 0.563,
+            "fused_ekf_3d_mae_m": 0.067
+        },
+        {
+            "test_frame_id": 379,
+            "objects_count": 5,
+            "latency_ms": 15.12,
+            "camera_3d_mae_m": 0.452,
+            "fused_ekf_3d_mae_m": 0.087
+        },
+        {
+            "test_frame_id": 380,
+            "objects_count": 3,
+            "latency_ms": 13.45,
+            "camera_3d_mae_m": 0.856,
+            "fused_ekf_3d_mae_m": 0.124
+        },
+        {
+            "test_frame_id": 381,
+            "objects_count": 9,
+            "latency_ms": 15.67,
+            "camera_3d_mae_m": 0.584,
+            "fused_ekf_3d_mae_m": 0.094
+        },
+        {
+            "test_frame_id": 382,
+            "objects_count": 0,
+            "latency_ms": 14.12,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 383,
+            "objects_count": 2,
+            "latency_ms": 13.14,
+            "camera_3d_mae_m": 0.368,
+            "fused_ekf_3d_mae_m": 0.08
+        },
+        {
+            "test_frame_id": 384,
+            "objects_count": 0,
+            "latency_ms": 12.4,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 385,
+            "objects_count": 1,
+            "latency_ms": 13.85,
+            "camera_3d_mae_m": 1.242,
+            "fused_ekf_3d_mae_m": 0.09
+        },
+        {
+            "test_frame_id": 386,
+            "objects_count": 1,
+            "latency_ms": 13.36,
+            "camera_3d_mae_m": 2.331,
+            "fused_ekf_3d_mae_m": 0.302
+        },
+        {
+            "test_frame_id": 387,
+            "objects_count": 1,
+            "latency_ms": 13.14,
+            "camera_3d_mae_m": 0.857,
+            "fused_ekf_3d_mae_m": 0.148
+        },
+        {
+            "test_frame_id": 388,
+            "objects_count": 4,
+            "latency_ms": 13.3,
+            "camera_3d_mae_m": 0.836,
+            "fused_ekf_3d_mae_m": 0.135
+        },
+        {
+            "test_frame_id": 389,
+            "objects_count": 3,
+            "latency_ms": 12.83,
+            "camera_3d_mae_m": 0.466,
+            "fused_ekf_3d_mae_m": 0.081
+        },
+        {
+            "test_frame_id": 390,
+            "objects_count": 1,
+            "latency_ms": 12.66,
+            "camera_3d_mae_m": 0.254,
+            "fused_ekf_3d_mae_m": 0.079
+        },
+        {
+            "test_frame_id": 391,
+            "objects_count": 0,
+            "latency_ms": 13.34,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 392,
+            "objects_count": 0,
+            "latency_ms": 13.16,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 393,
+            "objects_count": 5,
+            "latency_ms": 15.55,
+            "camera_3d_mae_m": 0.508,
+            "fused_ekf_3d_mae_m": 0.085
+        },
+        {
+            "test_frame_id": 394,
+            "objects_count": 0,
+            "latency_ms": 12.76,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 395,
+            "objects_count": 0,
+            "latency_ms": 14.23,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 396,
+            "objects_count": 2,
+            "latency_ms": 15.17,
+            "camera_3d_mae_m": 1.425,
+            "fused_ekf_3d_mae_m": 0.23
+        },
+        {
+            "test_frame_id": 397,
+            "objects_count": 0,
+            "latency_ms": 13.5,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 398,
+            "objects_count": 1,
+            "latency_ms": 13.53,
+            "camera_3d_mae_m": 0.267,
+            "fused_ekf_3d_mae_m": 0.021
+        },
+        {
+            "test_frame_id": 399,
+            "objects_count": 3,
+            "latency_ms": 13.2,
+            "camera_3d_mae_m": 1.162,
+            "fused_ekf_3d_mae_m": 0.171
+        },
+        {
+            "test_frame_id": 400,
+            "objects_count": 15,
+            "latency_ms": 14.24,
+            "camera_3d_mae_m": 0.798,
+            "fused_ekf_3d_mae_m": 0.114
+        },
+        {
+            "test_frame_id": 401,
+            "objects_count": 7,
+            "latency_ms": 14.08,
+            "camera_3d_mae_m": 1.236,
+            "fused_ekf_3d_mae_m": 0.178
+        },
+        {
+            "test_frame_id": 402,
+            "objects_count": 1,
+            "latency_ms": 13.91,
+            "camera_3d_mae_m": 0.674,
+            "fused_ekf_3d_mae_m": 0.071
+        },
+        {
+            "test_frame_id": 403,
+            "objects_count": 8,
+            "latency_ms": 14.4,
+            "camera_3d_mae_m": 0.777,
+            "fused_ekf_3d_mae_m": 0.098
+        },
+        {
+            "test_frame_id": 404,
+            "objects_count": 5,
+            "latency_ms": 13.41,
+            "camera_3d_mae_m": 1.161,
+            "fused_ekf_3d_mae_m": 0.162
+        },
+        {
+            "test_frame_id": 405,
+            "objects_count": 0,
+            "latency_ms": 12.15,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 406,
+            "objects_count": 4,
+            "latency_ms": 13.48,
+            "camera_3d_mae_m": 1.006,
+            "fused_ekf_3d_mae_m": 0.15
+        },
+        {
+            "test_frame_id": 407,
+            "objects_count": 0,
+            "latency_ms": 12.15,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 408,
+            "objects_count": 1,
+            "latency_ms": 13.53,
+            "camera_3d_mae_m": 2.646,
+            "fused_ekf_3d_mae_m": 0.376
+        },
+        {
+            "test_frame_id": 409,
+            "objects_count": 5,
+            "latency_ms": 14.48,
+            "camera_3d_mae_m": 0.777,
+            "fused_ekf_3d_mae_m": 0.112
+        },
+        {
+            "test_frame_id": 410,
+            "objects_count": 1,
+            "latency_ms": 13.28,
+            "camera_3d_mae_m": 0.887,
+            "fused_ekf_3d_mae_m": 0.124
+        },
+        {
+            "test_frame_id": 411,
+            "objects_count": 1,
+            "latency_ms": 13.29,
+            "camera_3d_mae_m": 2.821,
+            "fused_ekf_3d_mae_m": 0.367
+        },
+        {
+            "test_frame_id": 412,
+            "objects_count": 1,
+            "latency_ms": 14.14,
+            "camera_3d_mae_m": 0.054,
+            "fused_ekf_3d_mae_m": 0.022
+        },
+        {
+            "test_frame_id": 413,
+            "objects_count": 2,
+            "latency_ms": 14.56,
+            "camera_3d_mae_m": 0.56,
+            "fused_ekf_3d_mae_m": 0.104
+        },
+        {
+            "test_frame_id": 414,
+            "objects_count": 0,
+            "latency_ms": 12.03,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 415,
+            "objects_count": 1,
+            "latency_ms": 13.96,
+            "camera_3d_mae_m": 0.229,
+            "fused_ekf_3d_mae_m": 0.032
+        },
+        {
+            "test_frame_id": 416,
+            "objects_count": 1,
+            "latency_ms": 13.23,
+            "camera_3d_mae_m": 0.113,
+            "fused_ekf_3d_mae_m": 0.012
+        },
+        {
+            "test_frame_id": 417,
+            "objects_count": 7,
+            "latency_ms": 13.1,
+            "camera_3d_mae_m": 0.763,
+            "fused_ekf_3d_mae_m": 0.118
+        },
+        {
+            "test_frame_id": 418,
+            "objects_count": 0,
+            "latency_ms": 12.5,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 419,
+            "objects_count": 12,
+            "latency_ms": 12.84,
+            "camera_3d_mae_m": 0.899,
+            "fused_ekf_3d_mae_m": 0.124
+        },
+        {
+            "test_frame_id": 420,
+            "objects_count": 3,
+            "latency_ms": 13.67,
+            "camera_3d_mae_m": 0.387,
+            "fused_ekf_3d_mae_m": 0.044
+        },
+        {
+            "test_frame_id": 421,
+            "objects_count": 1,
+            "latency_ms": 13.35,
+            "camera_3d_mae_m": 0.345,
+            "fused_ekf_3d_mae_m": 0.041
+        },
+        {
+            "test_frame_id": 422,
+            "objects_count": 2,
+            "latency_ms": 14.17,
+            "camera_3d_mae_m": 0.59,
+            "fused_ekf_3d_mae_m": 0.118
+        },
+        {
+            "test_frame_id": 423,
+            "objects_count": 2,
+            "latency_ms": 13.49,
+            "camera_3d_mae_m": 2.78,
+            "fused_ekf_3d_mae_m": 0.358
+        },
+        {
+            "test_frame_id": 424,
+            "objects_count": 3,
+            "latency_ms": 15.3,
+            "camera_3d_mae_m": 1.094,
+            "fused_ekf_3d_mae_m": 0.159
+        },
+        {
+            "test_frame_id": 425,
+            "objects_count": 1,
+            "latency_ms": 13.83,
+            "camera_3d_mae_m": 0.31,
+            "fused_ekf_3d_mae_m": 0.042
+        },
+        {
+            "test_frame_id": 426,
+            "objects_count": 0,
+            "latency_ms": 11.69,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 427,
+            "objects_count": 0,
+            "latency_ms": 12.04,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 428,
+            "objects_count": 3,
+            "latency_ms": 11.97,
+            "camera_3d_mae_m": 0.465,
+            "fused_ekf_3d_mae_m": 0.076
+        },
+        {
+            "test_frame_id": 429,
+            "objects_count": 0,
+            "latency_ms": 11.64,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 430,
+            "objects_count": 3,
+            "latency_ms": 13.62,
+            "camera_3d_mae_m": 0.502,
+            "fused_ekf_3d_mae_m": 0.069
+        },
+        {
+            "test_frame_id": 431,
+            "objects_count": 6,
+            "latency_ms": 13.28,
+            "camera_3d_mae_m": 0.72,
+            "fused_ekf_3d_mae_m": 0.1
+        },
+        {
+            "test_frame_id": 432,
+            "objects_count": 0,
+            "latency_ms": 12.29,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 433,
+            "objects_count": 2,
+            "latency_ms": 13.41,
+            "camera_3d_mae_m": 0.929,
+            "fused_ekf_3d_mae_m": 0.101
+        },
+        {
+            "test_frame_id": 434,
+            "objects_count": 0,
+            "latency_ms": 12.03,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 435,
+            "objects_count": 0,
+            "latency_ms": 11.93,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 436,
+            "objects_count": 0,
+            "latency_ms": 12.34,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 437,
+            "objects_count": 3,
+            "latency_ms": 12.2,
+            "camera_3d_mae_m": 0.413,
+            "fused_ekf_3d_mae_m": 0.088
+        },
+        {
+            "test_frame_id": 438,
+            "objects_count": 4,
+            "latency_ms": 12.62,
+            "camera_3d_mae_m": 0.848,
+            "fused_ekf_3d_mae_m": 0.121
+        },
+        {
+            "test_frame_id": 439,
+            "objects_count": 1,
+            "latency_ms": 13.37,
+            "camera_3d_mae_m": 0.101,
+            "fused_ekf_3d_mae_m": 0.033
+        },
+        {
+            "test_frame_id": 440,
+            "objects_count": 3,
+            "latency_ms": 13.06,
+            "camera_3d_mae_m": 0.152,
+            "fused_ekf_3d_mae_m": 0.019
+        },
+        {
+            "test_frame_id": 441,
+            "objects_count": 1,
+            "latency_ms": 12.81,
+            "camera_3d_mae_m": 1.564,
+            "fused_ekf_3d_mae_m": 0.241
+        },
+        {
+            "test_frame_id": 442,
+            "objects_count": 0,
+            "latency_ms": 13.06,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 443,
+            "objects_count": 2,
+            "latency_ms": 13.17,
+            "camera_3d_mae_m": 2.299,
+            "fused_ekf_3d_mae_m": 0.312
+        },
+        {
+            "test_frame_id": 444,
+            "objects_count": 3,
+            "latency_ms": 12.92,
+            "camera_3d_mae_m": 0.184,
+            "fused_ekf_3d_mae_m": 0.016
+        },
+        {
+            "test_frame_id": 445,
+            "objects_count": 0,
+            "latency_ms": 12.84,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 446,
+            "objects_count": 2,
+            "latency_ms": 14.14,
+            "camera_3d_mae_m": 0.081,
+            "fused_ekf_3d_mae_m": 0.026
+        },
+        {
+            "test_frame_id": 447,
+            "objects_count": 1,
+            "latency_ms": 13.4,
+            "camera_3d_mae_m": 0.3,
+            "fused_ekf_3d_mae_m": 0.086
+        },
+        {
+            "test_frame_id": 448,
+            "objects_count": 5,
+            "latency_ms": 15.15,
+            "camera_3d_mae_m": 0.461,
+            "fused_ekf_3d_mae_m": 0.08
+        },
+        {
+            "test_frame_id": 449,
+            "objects_count": 0,
+            "latency_ms": 12.52,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 450,
+            "objects_count": 1,
+            "latency_ms": 13.39,
+            "camera_3d_mae_m": 1.672,
+            "fused_ekf_3d_mae_m": 0.221
+        },
+        {
+            "test_frame_id": 451,
+            "objects_count": 1,
+            "latency_ms": 14.52,
+            "camera_3d_mae_m": 1.661,
+            "fused_ekf_3d_mae_m": 0.247
+        },
+        {
+            "test_frame_id": 452,
+            "objects_count": 0,
+            "latency_ms": 13.11,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 453,
+            "objects_count": 3,
+            "latency_ms": 12.79,
+            "camera_3d_mae_m": 1.048,
+            "fused_ekf_3d_mae_m": 0.153
+        },
+        {
+            "test_frame_id": 454,
+            "objects_count": 3,
+            "latency_ms": 13.66,
+            "camera_3d_mae_m": 1.768,
+            "fused_ekf_3d_mae_m": 0.221
+        },
+        {
+            "test_frame_id": 455,
+            "objects_count": 0,
+            "latency_ms": 12.48,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 456,
+            "objects_count": 2,
+            "latency_ms": 14.07,
+            "camera_3d_mae_m": 0.418,
+            "fused_ekf_3d_mae_m": 0.034
+        },
+        {
+            "test_frame_id": 457,
+            "objects_count": 1,
+            "latency_ms": 16.12,
+            "camera_3d_mae_m": 0.95,
+            "fused_ekf_3d_mae_m": 0.14
+        },
+        {
+            "test_frame_id": 458,
+            "objects_count": 0,
+            "latency_ms": 12.43,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 459,
+            "objects_count": 4,
+            "latency_ms": 12.7,
+            "camera_3d_mae_m": 0.789,
+            "fused_ekf_3d_mae_m": 0.128
+        },
+        {
+            "test_frame_id": 460,
+            "objects_count": 4,
+            "latency_ms": 14.11,
+            "camera_3d_mae_m": 0.398,
+            "fused_ekf_3d_mae_m": 0.067
+        },
+        {
+            "test_frame_id": 461,
+            "objects_count": 6,
+            "latency_ms": 13.56,
+            "camera_3d_mae_m": 0.57,
+            "fused_ekf_3d_mae_m": 0.079
+        },
+        {
+            "test_frame_id": 462,
+            "objects_count": 3,
+            "latency_ms": 12.69,
+            "camera_3d_mae_m": 0.941,
+            "fused_ekf_3d_mae_m": 0.157
+        },
+        {
+            "test_frame_id": 463,
+            "objects_count": 0,
+            "latency_ms": 12.76,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 464,
+            "objects_count": 0,
+            "latency_ms": 12.59,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 465,
+            "objects_count": 11,
+            "latency_ms": 13.02,
+            "camera_3d_mae_m": 0.702,
+            "fused_ekf_3d_mae_m": 0.112
+        },
+        {
+            "test_frame_id": 466,
+            "objects_count": 0,
+            "latency_ms": 13.31,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 467,
+            "objects_count": 4,
+            "latency_ms": 14.74,
+            "camera_3d_mae_m": 0.435,
+            "fused_ekf_3d_mae_m": 0.075
+        },
+        {
+            "test_frame_id": 468,
+            "objects_count": 0,
+            "latency_ms": 12.07,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 469,
+            "objects_count": 3,
+            "latency_ms": 14.23,
+            "camera_3d_mae_m": 0.457,
+            "fused_ekf_3d_mae_m": 0.052
+        },
+        {
+            "test_frame_id": 470,
+            "objects_count": 0,
+            "latency_ms": 13.13,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 471,
+            "objects_count": 3,
+            "latency_ms": 13.28,
+            "camera_3d_mae_m": 0.53,
+            "fused_ekf_3d_mae_m": 0.066
+        },
+        {
+            "test_frame_id": 472,
+            "objects_count": 1,
+            "latency_ms": 13.92,
+            "camera_3d_mae_m": 0.717,
+            "fused_ekf_3d_mae_m": 0.1
+        },
+        {
+            "test_frame_id": 473,
+            "objects_count": 2,
+            "latency_ms": 13.48,
+            "camera_3d_mae_m": 1.293,
+            "fused_ekf_3d_mae_m": 0.224
+        },
+        {
+            "test_frame_id": 474,
+            "objects_count": 0,
+            "latency_ms": 11.98,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 475,
+            "objects_count": 5,
+            "latency_ms": 13.7,
+            "camera_3d_mae_m": 0.772,
+            "fused_ekf_3d_mae_m": 0.097
+        },
+        {
+            "test_frame_id": 476,
+            "objects_count": 11,
+            "latency_ms": 13.05,
+            "camera_3d_mae_m": 0.714,
+            "fused_ekf_3d_mae_m": 0.1
+        },
+        {
+            "test_frame_id": 477,
+            "objects_count": 8,
+            "latency_ms": 12.39,
+            "camera_3d_mae_m": 0.689,
+            "fused_ekf_3d_mae_m": 0.104
+        },
+        {
+            "test_frame_id": 478,
+            "objects_count": 1,
+            "latency_ms": 13.34,
+            "camera_3d_mae_m": 0.394,
+            "fused_ekf_3d_mae_m": 0.042
+        },
+        {
+            "test_frame_id": 479,
+            "objects_count": 1,
+            "latency_ms": 13.2,
+            "camera_3d_mae_m": 0.585,
+            "fused_ekf_3d_mae_m": 0.11
+        },
+        {
+            "test_frame_id": 480,
+            "objects_count": 3,
+            "latency_ms": 12.6,
+            "camera_3d_mae_m": 0.517,
+            "fused_ekf_3d_mae_m": 0.084
+        },
+        {
+            "test_frame_id": 481,
+            "objects_count": 0,
+            "latency_ms": 12.83,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 482,
+            "objects_count": 2,
+            "latency_ms": 13.41,
+            "camera_3d_mae_m": 0.11,
+            "fused_ekf_3d_mae_m": 0.03
+        },
+        {
+            "test_frame_id": 483,
+            "objects_count": 8,
+            "latency_ms": 13.82,
+            "camera_3d_mae_m": 0.818,
+            "fused_ekf_3d_mae_m": 0.113
+        },
+        {
+            "test_frame_id": 484,
+            "objects_count": 4,
+            "latency_ms": 14.91,
+            "camera_3d_mae_m": 0.507,
+            "fused_ekf_3d_mae_m": 0.075
+        },
+        {
+            "test_frame_id": 485,
+            "objects_count": 5,
+            "latency_ms": 14.2,
+            "camera_3d_mae_m": 0.415,
+            "fused_ekf_3d_mae_m": 0.069
+        },
+        {
+            "test_frame_id": 486,
+            "objects_count": 8,
+            "latency_ms": 13.21,
+            "camera_3d_mae_m": 0.834,
+            "fused_ekf_3d_mae_m": 0.123
+        },
+        {
+            "test_frame_id": 487,
+            "objects_count": 0,
+            "latency_ms": 13.2,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 488,
+            "objects_count": 0,
+            "latency_ms": 12.53,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 489,
+            "objects_count": 4,
+            "latency_ms": 12.94,
+            "camera_3d_mae_m": 0.471,
+            "fused_ekf_3d_mae_m": 0.058
+        },
+        {
+            "test_frame_id": 490,
+            "objects_count": 1,
+            "latency_ms": 14.2,
+            "camera_3d_mae_m": 0.244,
+            "fused_ekf_3d_mae_m": 0.091
+        },
+        {
+            "test_frame_id": 491,
+            "objects_count": 16,
+            "latency_ms": 13.1,
+            "camera_3d_mae_m": 1.084,
+            "fused_ekf_3d_mae_m": 0.154
+        },
+        {
+            "test_frame_id": 492,
+            "objects_count": 0,
+            "latency_ms": 11.83,
+            "camera_3d_mae_m": 1.38,
+            "fused_ekf_3d_mae_m": 0.12
+        },
+        {
+            "test_frame_id": 493,
+            "objects_count": 5,
+            "latency_ms": 13.89,
+            "camera_3d_mae_m": 0.521,
+            "fused_ekf_3d_mae_m": 0.071
+        },
+        {
+            "test_frame_id": 494,
+            "objects_count": 5,
+            "latency_ms": 12.94,
+            "camera_3d_mae_m": 0.732,
+            "fused_ekf_3d_mae_m": 0.097
+        },
+        {
+            "test_frame_id": 495,
+            "objects_count": 6,
+            "latency_ms": 12.78,
+            "camera_3d_mae_m": 0.964,
+            "fused_ekf_3d_mae_m": 0.111
+        },
+        {
+            "test_frame_id": 496,
+            "objects_count": 8,
+            "latency_ms": 14.21,
+            "camera_3d_mae_m": 0.855,
+            "fused_ekf_3d_mae_m": 0.121
+        },
+        {
+            "test_frame_id": 497,
+            "objects_count": 1,
+            "latency_ms": 13.3,
+            "camera_3d_mae_m": 1.024,
+            "fused_ekf_3d_mae_m": 0.143
+        },
+        {
+            "test_frame_id": 498,
+            "objects_count": 2,
+            "latency_ms": 13.07,
+            "camera_3d_mae_m": 0.598,
+            "fused_ekf_3d_mae_m": 0.105
+        },
+        {
+            "test_frame_id": 499,
+            "objects_count": 1,
+            "latency_ms": 13.83,
+            "camera_3d_mae_m": 0.343,
+            "fused_ekf_3d_mae_m": 0.033
+        },
+        {
+            "test_frame_id": 500,
+            "objects_count": 7,
+            "latency_ms": 13.24,
+            "camera_3d_mae_m": 0.883,
+            "fused_ekf_3d_mae_m": 0.106
+        }
+    ]
+}

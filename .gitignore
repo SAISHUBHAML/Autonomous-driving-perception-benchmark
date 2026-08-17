@@ -1,0 +1,49 @@
+# =============================================================================
+# Autonomous Driving Perception Benchmark — .gitignore
+# =============================================================================
+
+# ── Large Datasets (too large for GitHub — download via scripts) ─────────────
+datasets/
+
+# ── Model Weights (use releases or Git LFS for large .pt files) ──────────────
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# ── Benchmark Output Images & Annotated Frames ───────────────────────────────
+benchmark_results/full_dataset_evaluation/
+benchmark_results/real_inference_outputs/
+benchmark_results/real_dataset_detections/
+benchmark_results/nuscenes_annotated_samples/
+benchmark_results/kitti_dataset/
+live_camera_feed.jpg
+
+# ── Python Cache ─────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# ── Virtual Environments ─────────────────────────────────────────────────────
+venv/
+.venv/
+env/
+.env
+
+# ── Jupyter Notebooks checkpoints ────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── OS / Editor ──────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# ── ROS2 / Colcon Build Artifacts ────────────────────────────────────────────
+build/
+install/
+log/

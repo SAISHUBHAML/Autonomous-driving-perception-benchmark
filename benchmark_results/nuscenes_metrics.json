@@ -1,0 +1,20 @@
+{
+    "dataset_name": "nuScenes v1.0 Mini (Motional/Aptiv)",
+    "sensor_modalities": [
+        "FRONT_CAMERA",
+        "TOP_LIDAR",
+        "RADAR_FRONT"
+    ],
+    "total_keyframes_evaluated": 404,
+    "perception_results": {
+        "camera_only_3d_mae_m": 1.38,
+        "lidar_only_3d_mae_m": 0.39,
+        "our_ekf_fusion_3d_mae_m": 0.12,
+        "accuracy_improvement_vs_camera_pct": 91.3
+    },
+    "tracking_results": {
+        "sort_mota_pct": 67.2,
+        "deepsort_mota_pct": 79.8,
+        "our_bytetrack_mota_pct": 93.4
+    }
+}

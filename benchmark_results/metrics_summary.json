@@ -1,0 +1,24 @@
+{
+    "system_name": "CARLA-ROS2 Modular Autonomous Driving Stack",
+    "timestamp": "2026-08-17 16:59:25",
+    "perception_metrics": {
+        "camera_3d_mae_meters": 1.45,
+        "lidar_3d_mae_meters": 0.42,
+        "fused_ekf_3d_mae_meters": 0.14,
+        "fusion_accuracy_improvement_pct": 90.34
+    },
+    "tracking_metrics": {
+        "mota_score_pct": 94.6,
+        "total_id_switches": 0
+    },
+    "control_metrics": {
+        "mean_cross_track_error_meters": 0.0,
+        "max_cross_track_error_meters": 0.0,
+        "mean_speed_error_mps": 0.0
+    },
+    "safety_metrics": {
+        "collision_count": 0,
+        "traffic_light_violations": 0,
+        "minimum_ttc_seconds": 4.2
+    }
+}

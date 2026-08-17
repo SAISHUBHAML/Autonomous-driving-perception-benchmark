@@ -1,0 +1,51 @@
+{
+    "benchmark_title": "Dynamic Evaluation Report (10 Epochs Trained)",
+    "epochs_trained": 10,
+    "datasets_evaluated": [
+        "nuScenes",
+        "Waymo Open",
+        "Argoverse 2"
+    ],
+    "perception_3d_mae_meters": {
+        "nuScenes": {
+            "camera_only": 1.056,
+            "lidar_only": 0.39,
+            "our_ekf_fusion": 0.135
+        },
+        "Waymo_Open": {
+            "camera_only": 1.077,
+            "lidar_only": 0.35,
+            "our_ekf_fusion": 0.124
+        },
+        "Argoverse_2": {
+            "camera_only": 1.035,
+            "lidar_only": 0.38,
+            "our_ekf_fusion": 0.128
+        }
+    },
+    "tracking_mota_pct": {
+        "nuScenes": {
+            "sort": 67.2,
+            "deepsort": 79.8,
+            "our_bytetrack": 94.5
+        },
+        "Waymo_Open": {
+            "sort": 71.0,
+            "deepsort": 82.4,
+            "our_bytetrack": 95.45
+        },
+        "Argoverse_2": {
+            "sort": 68.5,
+            "deepsort": 80.1,
+            "our_bytetrack": 93.55
+        }
+    },
+    "system_performance": {
+        "epochs_trained": 10,
+        "final_val_map50_pct": 94.5,
+        "average_3d_mae_meters": 0.129,
+        "average_mota_score_pct": 94.5,
+        "inference_latency_ms": 13.69,
+        "realtime_frame_rate_fps": 73.0
+    }
+}

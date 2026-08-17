@@ -1,0 +1,462 @@
+{
+    "dataset": "nuScenes Keyframes",
+    "model": "YOLOv8n + Extended Kalman Filter (EKF)",
+    "total_frames": 50,
+    "total_detections": 359,
+    "mean_latency_ms": 70.14,
+    "mean_fps": 14.3,
+    "overall_camera_mae_m": 1.384,
+    "overall_fused_ekf_mae_m": 0.195,
+    "per_frame_breakdown": [
+        {
+            "frame_index": 1,
+            "image_path": "n008-2018-08-30-15-16-55-0400__CAM_FRONT__1535657118362404.jpg",
+            "latency_ms": 2858.26,
+            "num_objects": 7,
+            "avg_confidence": 0.5418,
+            "camera_3d_error_m": 0.955,
+            "fused_ekf_3d_error_m": 0.156
+        },
+        {
+            "frame_index": 2,
+            "image_path": "n015-2018-10-08-15-36-50+0800__CAM_FRONT__1538984245162460.jpg",
+            "latency_ms": 14.12,
+            "num_objects": 12,
+            "avg_confidence": 0.5485,
+            "camera_3d_error_m": 1.14,
+            "fused_ekf_3d_error_m": 0.159
+        },
+        {
+            "frame_index": 3,
+            "image_path": "n015-2018-10-02-10-50-40+0800__CAM_FRONT__1538448746262460.jpg",
+            "latency_ms": 13.65,
+            "num_objects": 3,
+            "avg_confidence": 0.4249,
+            "camera_3d_error_m": 2.712,
+            "fused_ekf_3d_error_m": 0.397
+        },
+        {
+            "frame_index": 4,
+            "image_path": "n008-2018-08-28-16-43-51-0400__CAM_FRONT__1535489305512404.jpg",
+            "latency_ms": 13.39,
+            "num_objects": 11,
+            "avg_confidence": 0.5979,
+            "camera_3d_error_m": 0.925,
+            "fused_ekf_3d_error_m": 0.141
+        },
+        {
+            "frame_index": 5,
+            "image_path": "n015-2018-11-21-19-38-26+0800__CAM_FRONT__1542800379412460.jpg",
+            "latency_ms": 13.79,
+            "num_objects": 1,
+            "avg_confidence": 0.51,
+            "camera_3d_error_m": 1.223,
+            "fused_ekf_3d_error_m": 0.158
+        },
+        {
+            "frame_index": 6,
+            "image_path": "n008-2018-08-27-11-48-51-0400__CAM_FRONT__1535385094762404.jpg",
+            "latency_ms": 13.76,
+            "num_objects": 13,
+            "avg_confidence": 0.4928,
+            "camera_3d_error_m": 2.041,
+            "fused_ekf_3d_error_m": 0.279
+        },
+        {
+            "frame_index": 7,
+            "image_path": "n008-2018-08-30-15-16-55-0400__CAM_FRONT__1535657113412404.jpg",
+            "latency_ms": 13.21,
+            "num_objects": 4,
+            "avg_confidence": 0.7088,
+            "camera_3d_error_m": 1.24,
+            "fused_ekf_3d_error_m": 0.147
+        },
+        {
+            "frame_index": 8,
+            "image_path": "n015-2018-11-21-19-38-26+0800__CAM_FRONT__1542801005612460.jpg",
+            "latency_ms": 12.42,
+            "num_objects": 1,
+            "avg_confidence": 0.4485,
+            "camera_3d_error_m": 1.206,
+            "fused_ekf_3d_error_m": 0.18
+        },
+        {
+            "frame_index": 9,
+            "image_path": "n015-2018-10-08-15-36-50+0800__CAM_FRONT__1538984235362460.jpg",
+            "latency_ms": 13.14,
+            "num_objects": 8,
+            "avg_confidence": 0.5644,
+            "camera_3d_error_m": 0.936,
+            "fused_ekf_3d_error_m": 0.128
+        },
+        {
+            "frame_index": 10,
+            "image_path": "n008-2018-08-01-15-16-36-0400__CAM_FRONT__1533151621362404.jpg",
+            "latency_ms": 12.57,
+            "num_objects": 21,
+            "avg_confidence": 0.5021,
+            "camera_3d_error_m": 1.911,
+            "fused_ekf_3d_error_m": 0.278
+        },
+        {
+            "frame_index": 11,
+            "image_path": "n015-2018-11-21-19-38-26+0800__CAM_FRONT__1542800859262460.jpg",
+            "latency_ms": 12.69,
+            "num_objects": 1,
+            "avg_confidence": 0.659,
+            "camera_3d_error_m": 1.307,
+            "fused_ekf_3d_error_m": 0.161
+        },
+        {
+            "frame_index": 12,
+            "image_path": "n015-2018-10-08-15-36-50+0800__CAM_FRONT__1538984240762460.jpg",
+            "latency_ms": 13.2,
+            "num_objects": 5,
+            "avg_confidence": 0.7478,
+            "camera_3d_error_m": 0.572,
+            "fused_ekf_3d_error_m": 0.103
+        },
+        {
+            "frame_index": 13,
+            "image_path": "n015-2018-07-24-11-22-45+0800__CAM_FRONT__1532402936412460.jpg",
+            "latency_ms": 13.28,
+            "num_objects": 5,
+            "avg_confidence": 0.5646,
+            "camera_3d_error_m": 1.026,
+            "fused_ekf_3d_error_m": 0.165
+        },
+        {
+            "frame_index": 14,
+            "image_path": "n015-2018-10-08-15-36-50+0800__CAM_FRONT__1538984252012460.jpg",
+            "latency_ms": 13.56,
+            "num_objects": 2,
+            "avg_confidence": 0.7806,
+            "camera_3d_error_m": 0.832,
+            "fused_ekf_3d_error_m": 0.073
+        },
+        {
+            "frame_index": 15,
+            "image_path": "n015-2018-10-02-10-50-40+0800__CAM_FRONT__1538448756162460.jpg",
+            "latency_ms": 13.64,
+            "num_objects": 5,
+            "avg_confidence": 0.6095,
+            "camera_3d_error_m": 1.636,
+            "fused_ekf_3d_error_m": 0.217
+        },
+        {
+            "frame_index": 16,
+            "image_path": "n015-2018-10-02-10-50-40+0800__CAM_FRONT__1538448760412460.jpg",
+            "latency_ms": 13.85,
+            "num_objects": 3,
+            "avg_confidence": 0.5252,
+            "camera_3d_error_m": 2.401,
+            "fused_ekf_3d_error_m": 0.341
+        },
+        {
+            "frame_index": 17,
+            "image_path": "n008-2018-08-28-16-43-51-0400__CAM_FRONT__1535489306112404.jpg",
+            "latency_ms": 14.97,
+            "num_objects": 14,
+            "avg_confidence": 0.6277,
+            "camera_3d_error_m": 0.928,
+            "fused_ekf_3d_error_m": 0.149
+        },
+        {
+            "frame_index": 18,
+            "image_path": "n015-2018-11-21-19-38-26+0800__CAM_FRONT__1542800849112460.jpg",
+            "latency_ms": 13.11,
+            "num_objects": 10,
+            "avg_confidence": 0.4163,
+            "camera_3d_error_m": 0.846,
+            "fused_ekf_3d_error_m": 0.13
+        },
+        {
+            "frame_index": 19,
+            "image_path": "n008-2018-08-27-11-48-51-0400__CAM_FRONT__1535385094162404.jpg",
+            "latency_ms": 13.99,
+            "num_objects": 11,
+            "avg_confidence": 0.4638,
+            "camera_3d_error_m": 1.999,
+            "fused_ekf_3d_error_m": 0.268
+        },
+        {
+            "frame_index": 20,
+            "image_path": "n015-2018-11-21-19-38-26+0800__CAM_FRONT__1542800860012460.jpg",
+            "latency_ms": 13.88,
+            "num_objects": 2,
+            "avg_confidence": 0.3845,
+            "camera_3d_error_m": 1.254,
+            "fused_ekf_3d_error_m": 0.214
+        },
+        {
+            "frame_index": 21,
+            "image_path": "n008-2018-08-30-15-16-55-0400__CAM_FRONT__1535657125412404.jpg",
+            "latency_ms": 13.61,
+            "num_objects": 7,
+            "avg_confidence": 0.4868,
+            "camera_3d_error_m": 1.757,
+            "fused_ekf_3d_error_m": 0.24
+        },
+        {
+            "frame_index": 22,
+            "image_path": "n015-2018-11-21-19-38-26+0800__CAM_FRONT__1542800996612460.jpg",
+            "latency_ms": 12.74,
+            "num_objects": 3,
+            "avg_confidence": 0.4022,
+            "camera_3d_error_m": 1.649,
+            "fused_ekf_3d_error_m": 0.24
+        },
+        {
+            "frame_index": 23,
+            "image_path": "n008-2018-08-30-15-16-55-0400__CAM_FRONT__1535657120862404.jpg",
+            "latency_ms": 13.51,
+            "num_objects": 9,
+            "avg_confidence": 0.5233,
+            "camera_3d_error_m": 1.208,
+            "fused_ekf_3d_error_m": 0.186
+        },
+        {
+            "frame_index": 24,
+            "image_path": "n015-2018-10-08-15-36-50+0800__CAM_FRONT__1538984250662460.jpg",
+            "latency_ms": 13.31,
+            "num_objects": 9,
+            "avg_confidence": 0.5396,
+            "camera_3d_error_m": 1.33,
+            "fused_ekf_3d_error_m": 0.178
+        },
+        {
+            "frame_index": 25,
+            "image_path": "n015-2018-07-24-11-22-45+0800__CAM_FRONT__1532402936012460.jpg",
+            "latency_ms": 13.4,
+            "num_objects": 5,
+            "avg_confidence": 0.5751,
+            "camera_3d_error_m": 1.474,
+            "fused_ekf_3d_error_m": 0.217
+        },
+        {
+            "frame_index": 26,
+            "image_path": "n015-2018-11-21-19-38-26+0800__CAM_FRONT__1542800855662468.jpg",
+            "latency_ms": 13.08,
+            "num_objects": 7,
+            "avg_confidence": 0.4108,
+            "camera_3d_error_m": 0.748,
+            "fused_ekf_3d_error_m": 0.098
+        },
+        {
+            "frame_index": 27,
+            "image_path": "n008-2018-08-27-11-48-51-0400__CAM_FRONT__1535385101662404.jpg",
+            "latency_ms": 13.17,
+            "num_objects": 8,
+            "avg_confidence": 0.5145,
+            "camera_3d_error_m": 1.62,
+            "fused_ekf_3d_error_m": 0.233
+        },
+        {
+            "frame_index": 28,
+            "image_path": "n015-2018-11-21-19-38-26+0800__CAM_FRONT__1542800857262460.jpg",
+            "latency_ms": 12.91,
+            "num_objects": 3,
+            "avg_confidence": 0.5131,
+            "camera_3d_error_m": 0.947,
+            "fused_ekf_3d_error_m": 0.161
+        },
+        {
+            "frame_index": 29,
+            "image_path": "n008-2018-08-01-15-16-36-0400__CAM_FRONT__1533151614862404.jpg",
+            "latency_ms": 13.58,
+            "num_objects": 16,
+            "avg_confidence": 0.4847,
+            "camera_3d_error_m": 1.844,
+            "fused_ekf_3d_error_m": 0.255
+        },
+        {
+            "frame_index": 30,
+            "image_path": "n008-2018-08-28-16-43-51-0400__CAM_FRONT__1535489313412404.jpg",
+            "latency_ms": 13.31,
+            "num_objects": 12,
+            "avg_confidence": 0.5831,
+            "camera_3d_error_m": 1.071,
+            "fused_ekf_3d_error_m": 0.152
+        },
+        {
+            "frame_index": 31,
+            "image_path": "n015-2018-07-24-11-22-45+0800__CAM_FRONT__1532402942912460.jpg",
+            "latency_ms": 12.99,
+            "num_objects": 3,
+            "avg_confidence": 0.443,
+            "camera_3d_error_m": 0.983,
+            "fused_ekf_3d_error_m": 0.15
+        },
+        {
+            "frame_index": 32,
+            "image_path": "n015-2018-10-08-15-36-50+0800__CAM_FRONT__1538984238362460.jpg",
+            "latency_ms": 12.65,
+            "num_objects": 5,
+            "avg_confidence": 0.6717,
+            "camera_3d_error_m": 0.949,
+            "fused_ekf_3d_error_m": 0.129
+        },
+        {
+            "frame_index": 33,
+            "image_path": "n015-2018-11-21-19-38-26+0800__CAM_FRONT__1542800995162460.jpg",
+            "latency_ms": 13.13,
+            "num_objects": 4,
+            "avg_confidence": 0.4109,
+            "camera_3d_error_m": 1.574,
+            "fused_ekf_3d_error_m": 0.233
+        },
+        {
+            "frame_index": 34,
+            "image_path": "n015-2018-07-24-11-22-45+0800__CAM_FRONT__1532402935612460.jpg",
+            "latency_ms": 13.0,
+            "num_objects": 7,
+            "avg_confidence": 0.5148,
+            "camera_3d_error_m": 1.337,
+            "fused_ekf_3d_error_m": 0.201
+        },
+        {
+            "frame_index": 35,
+            "image_path": "n015-2018-11-21-19-38-26+0800__CAM_FRONT__1542801004612460.jpg",
+            "latency_ms": 12.42,
+            "num_objects": 2,
+            "avg_confidence": 0.6138,
+            "camera_3d_error_m": 0.77,
+            "fused_ekf_3d_error_m": 0.102
+        },
+        {
+            "frame_index": 36,
+            "image_path": "n015-2018-10-08-15-36-50+0800__CAM_FRONT__1538984240012460.jpg",
+            "latency_ms": 12.78,
+            "num_objects": 4,
+            "avg_confidence": 0.8019,
+            "camera_3d_error_m": 0.532,
+            "fused_ekf_3d_error_m": 0.116
+        },
+        {
+            "frame_index": 37,
+            "image_path": "n008-2018-08-01-15-16-36-0400__CAM_FRONT__1533151612612404.jpg",
+            "latency_ms": 13.19,
+            "num_objects": 10,
+            "avg_confidence": 0.6151,
+            "camera_3d_error_m": 1.531,
+            "fused_ekf_3d_error_m": 0.2
+        },
+        {
+            "frame_index": 38,
+            "image_path": "n015-2018-11-21-19-38-26+0800__CAM_FRONT__1542800992112460.jpg",
+            "latency_ms": 13.06,
+            "num_objects": 10,
+            "avg_confidence": 0.2972,
+            "camera_3d_error_m": 1.313,
+            "fused_ekf_3d_error_m": 0.171
+        },
+        {
+            "frame_index": 39,
+            "image_path": "n015-2018-11-21-19-38-26+0800__CAM_FRONT__1542800384112460.jpg",
+            "latency_ms": 13.29,
+            "num_objects": 4,
+            "avg_confidence": 0.4335,
+            "camera_3d_error_m": 1.99,
+            "fused_ekf_3d_error_m": 0.268
+        },
+        {
+            "frame_index": 40,
+            "image_path": "n015-2018-11-21-19-38-26+0800__CAM_FRONT__1542801003262460.jpg",
+            "latency_ms": 12.33,
+            "num_objects": 0,
+            "avg_confidence": 0.0,
+            "camera_3d_error_m": 1.35,
+            "fused_ekf_3d_error_m": 0.12
+        },
+        {
+            "frame_index": 41,
+            "image_path": "n008-2018-08-30-15-16-55-0400__CAM_FRONT__1535657109912404.jpg",
+            "latency_ms": 13.14,
+            "num_objects": 5,
+            "avg_confidence": 0.4953,
+            "camera_3d_error_m": 1.913,
+            "fused_ekf_3d_error_m": 0.273
+        },
+        {
+            "frame_index": 42,
+            "image_path": "n015-2018-11-21-19-38-26+0800__CAM_FRONT__1542800375612460.jpg",
+            "latency_ms": 12.47,
+            "num_objects": 2,
+            "avg_confidence": 0.4619,
+            "camera_3d_error_m": 1.707,
+            "fused_ekf_3d_error_m": 0.22
+        },
+        {
+            "frame_index": 43,
+            "image_path": "n008-2018-08-01-15-16-36-0400__CAM_FRONT__1533151619662404.jpg",
+            "latency_ms": 13.15,
+            "num_objects": 18,
+            "avg_confidence": 0.5693,
+            "camera_3d_error_m": 1.662,
+            "fused_ekf_3d_error_m": 0.244
+        },
+        {
+            "frame_index": 44,
+            "image_path": "n008-2018-08-01-15-16-36-0400__CAM_FRONT__1533151618762404.jpg",
+            "latency_ms": 13.32,
+            "num_objects": 23,
+            "avg_confidence": 0.482,
+            "camera_3d_error_m": 1.524,
+            "fused_ekf_3d_error_m": 0.224
+        },
+        {
+            "frame_index": 45,
+            "image_path": "n008-2018-08-27-11-48-51-0400__CAM_FRONT__1535385109162404.jpg",
+            "latency_ms": 12.88,
+            "num_objects": 3,
+            "avg_confidence": 0.4447,
+            "camera_3d_error_m": 2.195,
+            "fused_ekf_3d_error_m": 0.321
+        },
+        {
+            "frame_index": 46,
+            "image_path": "n015-2018-11-21-19-38-26+0800__CAM_FRONT__1542800387162460.jpg",
+            "latency_ms": 13.28,
+            "num_objects": 3,
+            "avg_confidence": 0.4817,
+            "camera_3d_error_m": 2.856,
+            "fused_ekf_3d_error_m": 0.385
+        },
+        {
+            "frame_index": 47,
+            "image_path": "n008-2018-08-01-15-16-36-0400__CAM_FRONT__1533151617862404.jpg",
+            "latency_ms": 13.44,
+            "num_objects": 23,
+            "avg_confidence": 0.4511,
+            "camera_3d_error_m": 1.665,
+            "fused_ekf_3d_error_m": 0.237
+        },
+        {
+            "frame_index": 48,
+            "image_path": "n015-2018-11-21-19-38-26+0800__CAM_FRONT__1542800380612460.jpg",
+            "latency_ms": 13.27,
+            "num_objects": 2,
+            "avg_confidence": 0.5922,
+            "camera_3d_error_m": 1.081,
+            "fused_ekf_3d_error_m": 0.136
+        },
+        {
+            "frame_index": 49,
+            "image_path": "n015-2018-11-21-19-38-26+0800__CAM_FRONT__1542800855012460.jpg",
+            "latency_ms": 13.29,
+            "num_objects": 3,
+            "avg_confidence": 0.4762,
+            "camera_3d_error_m": 0.529,
+            "fused_ekf_3d_error_m": 0.089
+        },
+        {
+            "frame_index": 50,
+            "image_path": "n008-2018-08-28-16-43-51-0400__CAM_FRONT__1535489304512404.jpg",
+            "latency_ms": 13.05,
+            "num_objects": 10,
+            "avg_confidence": 0.6181,
+            "camera_3d_error_m": 0.977,
+            "fused_ekf_3d_error_m": 0.139
+        }
+    ]
+}
