@@ -15,6 +15,10 @@ The vehicle autonomously:
 - **Changes lanes** to overtake slow vehicles
 - **Reaches a destination** through urban traffic (Town03)
 
+## 📄 Project Documentation & Specifications
+- 📐 **[Implementation Plan & Architecture](docs/IMPLEMENTATION_PLAN.md)**: Full design specifications, sensor fusion algorithms, and dataset split strategy.
+- 📋 **[Development Tasks & Roadmap](docs/DEVELOPMENT_TASKS.md)**: Task checklist, completed milestones, and future features roadmap.
+
 ## 🏗️ Architecture
 
 ```
@@ -74,7 +78,7 @@ The vehicle autonomously:
 | **NumPy / SciPy** | Numerical computation |
 | **scikit-learn** | DBSCAN clustering |
 
-## 📦 ROS2 Packages
+## ROS2 Packages
 
 | Package | Description | Key Algorithms |
 |---------|-------------|---------------|
@@ -89,7 +93,7 @@ The vehicle autonomously:
 | `vehicle_control` | Throttle/steering | PID (longitudinal) + Pure Pursuit (lateral) |
 | `carla_ad_launch` | System orchestration | Sequenced launch files |
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Ubuntu 24.04
@@ -136,7 +140,7 @@ ros2 topic echo /planning/driving_command
 ros2 topic hz /carla/camera/image
 ```
 
-## 📊 ROS2 Topic Map
+## ROS2 Topic Map
 
 ```
 /carla/camera/image          ─→  Perception Node
@@ -154,7 +158,7 @@ ros2 topic hz /carla/camera/image
 /control/vehicle_cmd         ─→  CARLA Bridge
 ```
 
-## 🧠 Decision Making States
+## Decision Making States
 
 | State | Trigger | Behavior |
 |-------|---------|----------|
@@ -164,7 +168,7 @@ ros2 topic hz /carla/camera/image
 | `OBSTACLE_AVOIDANCE` | Static obstacle | Generate avoidance trajectory |
 | `EMERGENCY_STOP` | TTC < 2 seconds | Maximum braking |
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Project_1/
@@ -185,11 +189,11 @@ Project_1/
         └── carla_ad_launch/   # Launch files
 ```
 
-## 🔧 Configuration
+##  Configuration
 
 All nodes are configurable via YAML parameters in each package's `config/` directory.
 Key parameters can be adjusted at launch time.
 
-## 📝 License
+## License
 
 MIT License
