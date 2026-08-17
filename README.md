@@ -3,7 +3,7 @@
 A complete autonomous driving system for the CARLA simulator, built with ROS2.
 Implements a full **Perception → Planning → Control** pipeline using modular ROS2 nodes.
 
-## 🎯 What It Does
+## What It Does
 
 The vehicle autonomously:
 - **Follows lanes** using camera and LiDAR perception
@@ -15,11 +15,11 @@ The vehicle autonomously:
 - **Changes lanes** to overtake slow vehicles
 - **Reaches a destination** through urban traffic (Town03)
 
-## 📄 Project Documentation & Specifications
-- 📐 **[Implementation Plan & Architecture](docs/IMPLEMENTATION_PLAN.md)**: Full design specifications, sensor fusion algorithms, and dataset split strategy.
-- 📋 **[Development Tasks & Roadmap](docs/DEVELOPMENT_TASKS.md)**: Task checklist, completed milestones, and future features roadmap.
+## Project Documentation & Specifications
+- **[Implementation Plan & Architecture](docs/IMPLEMENTATION_PLAN.md)**: Full design specifications, sensor fusion algorithms, and dataset split strategy.
+- **[Development Tasks & Roadmap](docs/DEVELOPMENT_TASKS.md)**: Task checklist, completed milestones, and future features roadmap.
 
-## 🏗️ Architecture
+## Architecture
 
 ```
                     CARLA Simulator (Docker)
@@ -64,7 +64,7 @@ The vehicle autonomously:
                     CARLA Vehicle
 ```
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 | Technology | Purpose |
 |-----------|---------|
