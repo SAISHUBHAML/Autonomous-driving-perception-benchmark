@@ -1,199 +1,126 @@
-# CARLA-ROS2: Modular Autonomous Driving Stack
+# Autonomous Driving Perception Benchmark (nuScenes)
 
-A complete autonomous driving system for the CARLA simulator, built with ROS2.
-Implements a full **Perception → Planning → Control** pipeline using modular ROS2 nodes.
+A reproducible benchmark of a camera-first perception pipeline on **nuScenes v1.0-mini**:
 
-## What It Does
+1. **2D object detection**: YOLOv8n, COCO-pretrained (zero-shot) vs. fine-tuned on nuScenes
+2. **3D localization**: monocular geometric depth vs. camera + LiDAR depth for each detected object
+3. **Multi-object tracking**: ByteTrack and BoT-SORT on all six cameras
 
-The vehicle autonomously:
-- **Follows lanes** using camera and LiDAR perception
-- **Detects vehicles, pedestrians, and cyclists** with YOLOv8
-- **Detects and obeys traffic lights** (Red → Stop, Green → Go)
-- **Maintains safe following distance** (2-second rule)
-- **Stops at red lights** with smooth deceleration
-- **Avoids obstacles** in the lane
-- **Changes lanes** to overtake slow vehicles
-- **Reaches a destination** through urban traffic (Town03)
+Every metric is computed in code against the official nuScenes annotations. `results/` is
+written only by `scripts/evaluate.py`; nothing there is edited by hand.
 
-## Project Documentation & Specifications
-- **[Implementation Plan & Architecture](docs/IMPLEMENTATION_PLAN.md)**: Full design specifications, sensor fusion algorithms, and dataset split strategy.
-- **[Development Tasks & Roadmap](docs/DEVELOPMENT_TASKS.md)**: Task checklist, completed milestones, and future features roadmap.
+## Results
 
-## Architecture
+Test scenes `scene-0103` and `scene-0916` (486 keyframe images, 3,460 GT boxes) on an Apple M4 (MPS) at imgsz 960.
+
+![summary](results/summary.png)
+
+| | YOLOv8n COCO, zero-shot | YOLOv8n fine-tuned (15 epochs) |
+|---|---|---|
+| Detection mAP@50 / mAP@50:95 | **41.4** / 16.6 % | 36.0 / **18.7** % |
+| AP@50 car / pedestrian | 68.3 / 36.7 % | **75.9 / 61.6** % |
+| AP@50 truck / bus | **67.2 / 51.2** % | 50.2 / 7.6 % |
+| 3D center error, camera-only (median) | 1.38 m | 2.25 m |
+| 3D center error, camera + LiDAR (median) | **0.68 m** | 0.69 m |
+| Tracking MOTA / IDF1, ByteTrack | 4.0 / 39.3 % | 26.8 / 47.5 % |
+| Tracking MOTA / IDF1, BoT-SORT | 16.5 / 48.8 % | **37.3 / 56.4** % |
+| Detector latency (median) | 14.5 ms | 14.5 ms |
+
+What the numbers say:
+
+- **Fine-tuning helps where there is training data.** Cars and pedestrians make up about 87 % of
+  the ~5,000 training boxes, and their AP rises sharply (pedestrian +25 points). That is why
+  tracking improves so much: MOTA goes from 16.5 % to 37.3 % with BoT-SORT, with about a third of the false positives.
+- **It hurts rare classes.** Trucks, buses, motorcycles and bicycles have only 90–270 training
+  boxes each, and the validation scene used to pick the checkpoint contains no motorcycles or
+  bicycles. Bus AP collapses (51 → 8 %), so overall mAP@50 drops even though mAP@50:95 rises.
+  More data (full nuScenes) or class-balanced sampling is the fix, not more epochs.
+- **LiDAR roughly halves the 3D error** within 40 m (median 0.54 m at 0–20 m vs. 1.1 m camera-only).
+  Beyond 40 m the LiDAR is sparse and the errors grow for both methods.
+- The fine-tuned model's **camera-only** depth is worse because it learned nuScenes' projected-3D
+  boxes, which are taller than tight 2D boxes, while the height prior assumes tight boxes.
+- **BoT-SORT beats ByteTrack** with both detectors on this data (camera-motion compensation helps
+  a moving ego vehicle). MOTA is low overall because the GT includes many small, distant and
+  partly occluded objects that a nano-size detector misses.
+
+Full tables, including per-class and per-range numbers: [results/RESULTS.md](results/RESULTS.md).
+Raw numbers: [results/metrics.json](results/metrics.json).
+
+## Pipeline
 
 ```
-                    CARLA Simulator (Docker)
-                           │
-              ┌────────────┴────────────┐
-              │                         │
-           Camera                     LiDAR
-              │                         │
-              ▼                         ▼
-     ┌─────────────────┐     ┌──────────────────┐
-     │ Perception Node │     │ LiDAR Processing │
-     │   (YOLOv8)      │     │  (RANSAC+DBSCAN) │
-     └────────┬────────┘     └────────┬─────────┘
-              │                       │
-              └───────────┬───────────┘
-                          ▼
-                ┌──────────────────┐
-                │  Sensor Fusion   │
-                │     (EKF)        │
-                └────────┬─────────┘
-                         ▼
-                ┌──────────────────┐
-                │ Object Tracking  │
-                │  (ByteTrack)     │
-                └────────┬─────────┘
-                         ▼
-                ┌──────────────────┐
-                │ Decision Making  │
-                │    (FSM)         │
-                └────────┬─────────┘
-                         ▼
-                ┌──────────────────┐
-                │  Path Planning   │
-                │ (Hybrid A*)      │
-                └────────┬─────────┘
-                         ▼
-                ┌──────────────────┐
-                │ Vehicle Control  │
-                │(PID+Pure Pursuit)│
-                └────────┬─────────┘
-                         ▼
-                    CARLA Vehicle
+nuScenes keyframes (6 cameras) ──► YOLOv8n ──► 2D boxes ──┬──► COCO mAP vs projected 3D GT
+                                                          │
+LIDAR_TOP sweep ──► project into camera ──────────────────┼──► depth per box ──► 3D center error
+                                                          │
+all camera frames (~12 Hz) ──► ByteTrack / BoT-SORT ──────┴──► MOTA / IDF1 vs instance ids
 ```
 
-## Technology Stack
+| Module | What it does |
+|---|---|
+| [`adpb/nusc.py`](adpb/nusc.py) | Scene splits, class mapping, 2D GT from projected 3D boxes, LiDAR→image projection |
+| [`adpb/detection.py`](adpb/detection.py) | YOLO wrapper mapped to the 6 classes, COCO-style AP with ignore regions, latency |
+| [`adpb/localization.py`](adpb/localization.py) | Matches detections to GT and scores camera-only vs. LiDAR-assisted 3D centers |
+| [`adpb/tracking.py`](adpb/tracking.py) | Runs Ultralytics trackers per camera sequence and scores them with `motmetrics` |
+| [`scripts/train_detector.py`](scripts/train_detector.py) | Exports train/val scenes to YOLO format and fine-tunes YOLOv8n |
+| [`scripts/evaluate.py`](scripts/evaluate.py) | Runs everything on the test scenes and writes `results/` |
 
-| Technology | Purpose |
-|-----------|---------|
-| **Ubuntu 24.04** | Operating System |
-| **ROS2 Jazzy** | Robot middleware |
-| **CARLA 0.9.15** | Driving simulator (Docker) |
-| **Python 3.12** | Primary language |
-| **PyTorch + CUDA** | Deep learning inference |
-| **YOLOv8 (Ultralytics)** | Object detection |
-| **OpenCV** | Image processing |
-| **NumPy / SciPy** | Numerical computation |
-| **scikit-learn** | DBSCAN clustering |
+## Evaluation protocol
 
-## ROS2 Packages
+- **Split by scene, never by frame.** nuScenes-mini has 10 scenes. The official `mini_val`
+  scenes (`scene-0103`, `scene-0916`) are the **test set** and are never used for training or
+  model selection. Of the 8 `mini_train` scenes, `scene-0655` is held out as validation for
+  fine-tuning and the other 7 are used for training.
+- **Keyframes only for scoring.** Annotations exist only for 2 Hz keyframes: 486 test images across 6 cameras.
+- **Classes:** car, truck, bus, motorcycle, bicycle, pedestrian. These are the nuScenes categories
+  with a direct COCO equivalent, so the zero-shot and fine-tuned models solve the same task.
+- **2D ground truth** is the image-space hull of each projected 3D box, clipped to the image.
+  Boxes with nuScenes visibility < 40 % or no LiDAR/radar points are **ignore regions**:
+  detections on them are neither rewarded nor penalised.
+- **Detection:** COCO AP (`pycocotools`), up to 300 detections per image.
+- **3D localization:** for each detection matched to GT (same class, IoU ≥ 0.5, score ≥ 0.25),
+  the 2D box center is back-projected at an estimated depth and compared with the GT 3D box center.
+  - *Camera-only:* `depth = f_y · H_class / box_height`, using a fixed height prior per class.
+  - *Camera + LiDAR:* median depth of LiDAR points inside the central half of the box, plus a fixed
+    per-class half-extent offset. Falls back to camera depth when there are fewer than 3 points.
+- **Tracking:** the tracker sees every camera frame (~12 Hz) and is scored on keyframes. There are
+  12 sequences (2 scenes × 6 cameras), and GT identities are nuScenes instance tokens. CLEAR-MOT and IDF1 come from `motmetrics`.
+- **Latency:** detector only (pre-processing, inference and NMS) with 10 warm-up frames excluded.
+  It is measured on the machine named in `results/RESULTS.md`.
 
-| Package | Description | Key Algorithms |
-|---------|-------------|---------------|
-| `carla_ad_msgs` | Custom message definitions | 9 message types |
-| `carla_bridge` | CARLA ↔ ROS2 interface | Sync mode, sensor spawning |
-| `perception` | Camera object detection | YOLOv8n, HSV traffic light classification |
-| `lidar_processing` | LiDAR point cloud pipeline | RANSAC ground removal, DBSCAN clustering |
-| `sensor_fusion` | Multi-sensor fusion | Extended Kalman Filter, camera-LiDAR projection |
-| `object_tracking` | Multi-object tracking | ByteTrack, per-track Kalman filters |
-| `decision_making` | Behavioral decisions | Finite State Machine (5 states) |
-| `path_planning` | Trajectory generation | Hybrid A*, cubic spline smoothing |
-| `vehicle_control` | Throttle/steering | PID (longitudinal) + Pure Pursuit (lateral) |
-| `carla_ad_launch` | System orchestration | Sequenced launch files |
+## Reproduce
 
-## Quick Start
-
-### Prerequisites
-- Ubuntu 24.04
-- NVIDIA GPU with CUDA support
-- Docker with nvidia-container-toolkit
-
-### 1. Setup Environment
 ```bash
-cd Project_1
-chmod +x scripts/*.sh
-bash scripts/setup_environment.sh
-source ~/.bashrc
+python3.12 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+bash scripts/download_nuscenes.sh                 # ~4 GB, CC BY-NC-SA 4.0
+mkdir -p weights && (cd weights && python -c "from ultralytics import YOLO; YOLO('yolov8n.pt')")
+python scripts/train_detector.py --epochs 15      # optional: writes weights/yolov8n_nuscenes.pt
+python scripts/evaluate.py                        # writes results/
 ```
 
-### 2. Start CARLA Simulator
-```bash
-bash scripts/launch_carla.sh
-```
+## Limitations
 
-### 3. Build Workspace
-```bash
-cd carla_ad_ws
-colcon build --symlink-install
-source install/setup.bash
-```
+- **Small test set.** nuScenes-mini has only 2 test scenes of about 20 s each: a Boston street
+  with many pedestrians and a Singapore parking lot with parked bicycles and motorcycles. Treat
+  differences of a few points as noise, and use the full nuScenes `val` split for claims that need
+  to generalise.
+- 2D GT from projected 3D boxes is looser than hand-drawn 2D boxes, which lowers IoU-based scores,
+  especially mAP@50:95.
+- nuScenes labels a bicycle or motorcycle *with its rider* as one object. COCO detectors also
+  output the rider as a `person`, which shows up as pedestrian false positives for the zero-shot model.
+- The 3D estimate keeps the 2D box center and only estimates depth. It is a per-object baseline,
+  not a 3D detector and not a temporal filter.
+- Height priors and LiDAR offsets are fixed constants chosen a priori and were not tuned on the test set.
 
-### 4. Launch Full Stack
-```bash
-ros2 launch carla_ad_launch full_stack.launch.py
-```
+## Roadmap
 
-### 5. Monitor (in separate terminals)
-```bash
-# View all topics
-ros2 topic list
-
-# Monitor detections
-ros2 topic echo /tracking/tracked_objects
-
-# Monitor decisions
-ros2 topic echo /planning/driving_command
-
-# Check rates
-ros2 topic hz /carla/camera/image
-```
-
-## ROS2 Topic Map
-
-```
-/carla/camera/image          ─→  Perception Node
-/carla/lidar/points          ─→  LiDAR Processing
-/carla/gnss                  ─→  Sensor Fusion
-/carla/imu                   ─→  Sensor Fusion
-/carla/ego/odometry          ─→  Planner, Controller
-/carla/traffic_lights        ─→  Decision Maker
-/perception/detections_2d    ─→  Sensor Fusion
-/perception/lidar_objects    ─→  Sensor Fusion
-/perception/fused_objects    ─→  Object Tracker
-/tracking/tracked_objects    ─→  Decision Maker
-/planning/driving_command    ─→  Path Planner
-/planning/trajectory         ─→  Vehicle Controller
-/control/vehicle_cmd         ─→  CARLA Bridge
-```
-
-## Decision Making States
-
-| State | Trigger | Behavior |
-|-------|---------|----------|
-| `LANE_FOLLOWING` | Default | Follow lane at target speed |
-| `STOP_AT_LIGHT` | Red/yellow traffic light | Smooth deceleration to stop |
-| `LANE_CHANGE` | Slow vehicle ahead | Execute lane change maneuver |
-| `OBSTACLE_AVOIDANCE` | Static obstacle | Generate avoidance trajectory |
-| `EMERGENCY_STOP` | TTC < 2 seconds | Maximum braking |
-
-## Project Structure
-
-```
-Project_1/
-├── README.md
-├── scripts/                    # Setup & launch scripts
-├── docker/                     # CARLA Docker config
-└── carla_ad_ws/               # ROS2 workspace
-    └── src/
-        ├── carla_ad_msgs/     # Custom messages
-        ├── carla_bridge/      # CARLA interface
-        ├── perception/        # YOLOv8 detection
-        ├── lidar_processing/  # Point cloud processing
-        ├── sensor_fusion/     # EKF fusion
-        ├── object_tracking/   # ByteTrack tracker
-        ├── decision_making/   # FSM decisions
-        ├── path_planning/     # Hybrid A* planning
-        ├── vehicle_control/   # PID + Pure Pursuit
-        └── carla_ad_launch/   # Launch files
-```
-
-##  Configuration
-
-All nodes are configurable via YAML parameters in each package's `config/` directory.
-Key parameters can be adjusted at launch time.
+- [ ] Evaluate on the full nuScenes `val` split (150 scenes)
+- [ ] Temporal fusion: a Kalman filter over LiDAR depth and camera boxes per track, scored with the
+      same 3D metric
+- [ ] Official nuScenes detection/tracking metrics (NDS, AMOTA) with a real 3D detector
+- [ ] ONNX/TensorRT export with latency measured on an embedded GPU
 
 ## License
 
-MIT License
+Code: MIT. The nuScenes data is © Motional and licensed CC BY-NC-SA 4.0.
