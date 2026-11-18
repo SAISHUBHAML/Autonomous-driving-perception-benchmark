@@ -1,6 +1,6 @@
 # Results — nuScenes v1.0-mini test scenes scene-0103, scene-0916
 
-Generated 2026-11-17T15:49:32 by `scripts/evaluate.py` (commit db188d5-dirty), mps, imgsz 960.
+Generated 2026-11-18T19:44:54 by `scripts/evaluate.py` (commit 2dedb68), mps, imgsz 960.
 
 ## 2D detection (COCO-style AP, %)
 
@@ -34,9 +34,41 @@ By ground-truth range (Camera+LiDAR median, m):
 | yolov8n fine-tuned | bytetrack | 26.8 | 47.5 | 220 | 439 | 1872 | 570 | 109 |
 | yolov8n fine-tuned | botsort | 37.3 | 56.4 | 160 | 357 | 1651 | 570 | 172 |
 
+## LiDAR segmentation (ground removal + DBSCAN, LiDAR only)
+
+81 LIDAR_TOP keyframe sweeps, 2358 GT objects of the evaluated classes within 50 m with ≥ 5 LiDAR points. DBSCAN eps 0.3 m, min_samples 5 (chosen on training scenes).
+
+| Clusters | Recall % | Precision on annotated objects % | Over-segmented % | BEV centre error median / mean (m) | Recall 0-20m | Recall 20-40m | Recall 40-50m |
+|---|---|---|---|---|---|---|---|
+| 8301 | 63.2 | 25.5 | 22.4 | 0.53 / 0.76 | 83.9 | 38.3 | 1.7 |
+
+Recall by class: car 56.9 %, truck 63.0 %, bus 75.8 %, motorcycle 60.0 %, bicycle 56.5 %, pedestrian 76.1 %.
+
+### Camera-labelled clusters (late camera–LiDAR fusion)
+
+| Model | Labelled clusters | Recall % (same class) | Precision % (same class) | Recall car | Recall truck | Recall bus | Recall motorcycle | Recall bicycle | Recall pedestrian |
+|---|---|---|---|---|---|---|---|---|---|
+| yolov8n-coco (zero-shot) | 1424 | 49.9 | 81.2 | 49.2 | 44.6 | 72.7 | 15.6 | 21.7 | 58.6 |
+| yolov8n fine-tuned | 1253 | 38.7 | 70.5 | 41.4 | 31.5 | 30.3 | 4.4 | 8.7 | 42.4 |
+
+## 3D multi-object tracking in the global frame (EKF, all 6 cameras fused, 2 Hz keyframes)
+
+Matched to GT when the BEV centre distance is ≤ 2 m (same class). Measurement noise fitted on scene-0655.
+
+| Model | Configuration | MOTA % | IDF1 % | ID switches | FP | Misses | BEV centre error median / mean (m) | Velocity error median (m/s) |
+|---|---|---|---|---|---|---|---|---|
+| yolov8n-coco (zero-shot) | camera-only, no filter | -7.1 | 34.9 | 179 | 1175 | 1476 | 0.95 / 0.96 | – |
+| yolov8n-coco (zero-shot) | camera-only, EKF | -12.4 | 34.3 | 158 | 1281 | 1530 | 0.94 / 0.98 | 0.78 |
+| yolov8n-coco (zero-shot) | camera+LiDAR, no filter | 18.8 | 47.5 | 172 | 814 | 1160 | 0.55 / 0.67 | – |
+| yolov8n-coco (zero-shot) | camera+LiDAR, EKF | 19.3 | 47.9 | 164 | 812 | 1157 | 0.61 / 0.71 | 0.52 |
+| yolov8n fine-tuned | camera-only, no filter | -25.1 | 24.2 | 140 | 1270 | 1894 | 1.14 / 1.12 | – |
+| yolov8n fine-tuned | camera-only, EKF | -20.5 | 26.9 | 115 | 1226 | 1843 | 1.04 / 1.04 | 0.85 |
+| yolov8n fine-tuned | camera+LiDAR, no filter | 18.6 | 44.0 | 146 | 653 | 1351 | 0.55 / 0.67 | – |
+| yolov8n fine-tuned | camera+LiDAR, EKF | 18.0 | 43.9 | 164 | 653 | 1349 | 0.64 / 0.73 | 0.56 |
+
 ## Latency (detector only, warm-up excluded)
 
 | Model | Device | Median ms | p95 ms |
 |---|---|---|---|
-| yolov8n-coco (zero-shot) | mps | 14.5 | 15.6 |
-| yolov8n fine-tuned | mps | 14.5 | 15.8 |
+| yolov8n-coco (zero-shot) | mps | 14.6 | 15.6 |
+| yolov8n fine-tuned | mps | 14.5 | 15.7 |
