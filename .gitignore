@@ -47,3 +47,7 @@ Thumbs.db
 build/
 install/
 log/
+
+# ── Training runs, logs, generated YOLO export ───────────────────────────────
+runs/
+logs/

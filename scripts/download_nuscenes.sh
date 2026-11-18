@@ -1,45 +1,19 @@
 #!/bin/bash
-# =============================================================================
-# Download Official nuScenes v1.0 Mini Dataset (3.9 GB)
-# =============================================================================
+# Download and extract nuScenes v1.0-mini (~4 GB) into datasets/nuscenes/.
+# nuScenes is licensed CC BY-NC-SA 4.0 (non-commercial); see https://www.nuscenes.org/terms-of-use
+set -euo pipefail
 
-set -e
-
-PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-DATASET_DIR="$PROJECT_DIR/datasets/nuscenes"
-
-echo "============================================="
-echo " Downloading Official nuScenes v1.0 Mini Dataset"
-echo " Target Directory: $DATASET_DIR"
-echo "============================================="
-
-# 1. Install nuScenes devkit
-echo "[1/3] Installing nuscenes-devkit..."
-pip3 install --user --break-system-packages nuscenes-devkit matplotlib opencv-python
-
-# 2. Create directory and download dataset
-mkdir -p "$DATASET_DIR"
-cd "$DATASET_DIR"
-
-TAR_FILE="v1.0-mini.tgz"
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+DEST="$ROOT/datasets/nuscenes"
 URL="https://d36yt3mvayqw5m.cloudfront.net/public/v1.0/v1.0-mini.tgz"
 
-if [ ! -f "$TAR_FILE" ] && [ ! -d "v1.0-mini" ]; then
-    echo "[2/3] Downloading nuScenes v1.0-mini.tgz (~3.9 GB)..."
-    wget -c "$URL" -O "$TAR_FILE"
-else
-    echo "[2/3] nuScenes archive or directory already exists."
+if [ -d "$DEST/v1.0-mini" ]; then
+    echo "nuScenes mini already present at $DEST"
+    exit 0
 fi
-
-# 3. Extract dataset
-if [ -f "$TAR_FILE" ] && [ ! -d "v1.0-mini" ]; then
-    echo "[3/3] Extracting nuScenes dataset..."
-    tar -xzf "$TAR_FILE"
-    echo "Extraction complete!"
-fi
-
-echo ""
-echo "============================================="
-echo " nuScenes dataset ready at: $DATASET_DIR"
-echo " Run benchmark: python3 scripts/evaluate_on_nuscenes.py"
-echo "============================================="
+mkdir -p "$DEST"
+echo "Downloading nuScenes v1.0-mini to $DEST ..."
+curl -fL -C - -o "$DEST/v1.0-mini.tgz" "$URL"
+tar -xzf "$DEST/v1.0-mini.tgz" -C "$DEST"
+rm "$DEST/v1.0-mini.tgz"
+echo "Done: $DEST"

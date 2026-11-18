@@ -1,0 +1,10 @@
+# Versions this benchmark was run with (Python 3.12)
+ultralytics==8.4.215
+torch==2.15.0
+nuscenes-devkit==1.2.0
+pycocotools==2.0.11
+motmetrics==1.4.0
+lap==0.5.14
+numpy==1.26.4
+matplotlib==3.11.2
+opencv-python==4.11.0.86
