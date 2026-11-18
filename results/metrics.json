@@ -1,6 +1,6 @@
 {
-  "generated": "2026-11-17T15:49:32",
-  "git_commit": "db188d5-dirty",
+  "generated": "2026-11-18T19:44:54",
+  "git_commit": "2dedb68",
   "dataset": "v1.0-mini",
   "split": {
     "train": [
@@ -245,9 +245,168 @@
         "device": "mps",
         "imgsz": 960,
         "frames": 100,
-        "mean_ms": 14.530600429861806,
-        "median_ms": 14.453292009420693,
-        "p95_ms": 15.560862510756124
+        "mean_ms": 14.659844558918849,
+        "median_ms": 14.638416992966086,
+        "p95_ms": 15.633960085688159
+      },
+      "lidar_clustering": {
+        "params": {
+          "eps": 0.3,
+          "min_samples": 5,
+          "max_range_m": 50.0,
+          "min_gt_lidar_points": 5,
+          "match_margin_m": 0.5
+        },
+        "sweeps": 81,
+        "gt_objects": 2358,
+        "clusters": 8301,
+        "recall": 0.631891433418151,
+        "precision_on_annotated_objects": 0.25466811227562947,
+        "f1": 0.36302716336061003,
+        "f2": 0.4874776439006655,
+        "oversegmented_fraction": 0.22416107382550335,
+        "bev_center_error_m": {
+          "median": 0.5257391404142264,
+          "mean": 0.7579259021689881
+        },
+        "recall_by_class": {
+          "car": 0.5694744420446364,
+          "truck": 0.6304347826086957,
+          "bus": 0.7575757575757576,
+          "motorcycle": 0.6,
+          "bicycle": 0.5652173913043478,
+          "pedestrian": 0.760932944606414
+        },
+        "recall_by_range": {
+          "0-20m": 0.8390718562874252,
+          "20-40m": 0.38253638253638256,
+          "40-50m": 0.016666666666666666
+        },
+        "gt_by_class": {
+          "car": 1389,
+          "truck": 92,
+          "bus": 33,
+          "motorcycle": 135,
+          "bicycle": 23,
+          "pedestrian": 686
+        },
+        "camera_labelled": {
+          "clusters": 1424,
+          "recall": 0.49872773536895676,
+          "precision_same_class": 0.8125,
+          "f1": 0.6180715585203154,
+          "recall_by_class": {
+            "car": 0.4917206623470122,
+            "truck": 0.44565217391304346,
+            "bus": 0.7272727272727273,
+            "motorcycle": 0.15555555555555556,
+            "bicycle": 0.21739130434782608,
+            "pedestrian": 0.5860058309037901
+          },
+          "recall_by_range": {
+            "0-20m": 0.6788922155688623,
+            "20-40m": 0.2796257796257796,
+            "40-50m": 0.0
+          }
+        }
+      },
+      "ekf_tracking": {
+        "measurement_noise": {
+          "scenes": [
+            "scene-0655"
+          ],
+          "samples": {
+            "lidar": 665,
+            "camera": 811,
+            "theta": 811
+          },
+          "sigma_range_lidar_m": {
+            "a": 0.35743797216739454,
+            "b_per_m": 0.03198500067525109
+          },
+          "sigma_range_camera_m": {
+            "a": 0.553155787194354,
+            "b_per_m": 0.12556139114103887
+          },
+          "sigma_bearing_rad": 0.015990601033796042
+        },
+        "score_threshold": 0.3,
+        "match_distance_m": 2.0,
+        "max_range_m": 50.0,
+        "configs": {
+          "camera-only, no filter": {
+            "MOTA": -0.07115821347464046,
+            "IDF1": 0.34918723660445516,
+            "id_switches": 179,
+            "false_positives": 1175,
+            "misses": 1476,
+            "gt_detections": 2642,
+            "gt_tracks": 193,
+            "mostly_tracked": 36,
+            "bev_center_error_m": {
+              "n": 1166,
+              "mean": 0.9583719195632708,
+              "median": 0.949407891210567
+            },
+            "velocity_error_mps": null
+          },
+          "camera-only, EKF": {
+            "MOTA": -0.12376987130961403,
+            "IDF1": 0.34319761668321747,
+            "id_switches": 158,
+            "false_positives": 1281,
+            "misses": 1530,
+            "gt_detections": 2642,
+            "gt_tracks": 193,
+            "mostly_tracked": 35,
+            "bev_center_error_m": {
+              "n": 1112,
+              "mean": 0.9752657239866152,
+              "median": 0.9424907028387361
+            },
+            "velocity_error_mps": {
+              "n": 1020,
+              "mean": 1.2748197671170969,
+              "median": 0.7805251299588626
+            }
+          },
+          "camera+LiDAR, no filter": {
+            "MOTA": 0.18773656320968968,
+            "IDF1": 0.4754961522883759,
+            "id_switches": 172,
+            "false_positives": 814,
+            "misses": 1160,
+            "gt_detections": 2642,
+            "gt_tracks": 193,
+            "mostly_tracked": 53,
+            "bev_center_error_m": {
+              "n": 1482,
+              "mean": 0.6720525829195562,
+              "median": 0.5513047945718937
+            },
+            "velocity_error_mps": null
+          },
+          "camera+LiDAR, EKF": {
+            "MOTA": 0.19265707797123388,
+            "IDF1": 0.47904434095970844,
+            "id_switches": 164,
+            "false_positives": 812,
+            "misses": 1157,
+            "gt_detections": 2642,
+            "gt_tracks": 193,
+            "mostly_tracked": 57,
+            "bev_center_error_m": {
+              "n": 1485,
+              "mean": 0.7055023340707535,
+              "median": 0.6074618728791805
+            },
+            "velocity_error_mps": {
+              "n": 1371,
+              "mean": 0.9489073152823496,
+              "median": 0.5186962953888078
+            }
+          }
+        }
       },
       "tracking": {
         "bytetrack": {
@@ -488,9 +647,168 @@
         "device": "mps",
         "imgsz": 960,
         "frames": 100,
-        "mean_ms": 14.376022910582833,
-        "median_ms": 14.487541513517499,
-        "p95_ms": 15.791049714607652
+        "mean_ms": 14.480342068709433,
+        "median_ms": 14.478854005574249,
+        "p95_ms": 15.696239550015889
+      },
+      "lidar_clustering": {
+        "params": {
+          "eps": 0.3,
+          "min_samples": 5,
+          "max_range_m": 50.0,
+          "min_gt_lidar_points": 5,
+          "match_margin_m": 0.5
+        },
+        "sweeps": 81,
+        "gt_objects": 2358,
+        "clusters": 8301,
+        "recall": 0.631891433418151,
+        "precision_on_annotated_objects": 0.25466811227562947,
+        "f1": 0.36302716336061003,
+        "f2": 0.4874776439006655,
+        "oversegmented_fraction": 0.22416107382550335,
+        "bev_center_error_m": {
+          "median": 0.5257391404142264,
+          "mean": 0.7579259021689881
+        },
+        "recall_by_class": {
+          "car": 0.5694744420446364,
+          "truck": 0.6304347826086957,
+          "bus": 0.7575757575757576,
+          "motorcycle": 0.6,
+          "bicycle": 0.5652173913043478,
+          "pedestrian": 0.760932944606414
+        },
+        "recall_by_range": {
+          "0-20m": 0.8390718562874252,
+          "20-40m": 0.38253638253638256,
+          "40-50m": 0.016666666666666666
+        },
+        "gt_by_class": {
+          "car": 1389,
+          "truck": 92,
+          "bus": 33,
+          "motorcycle": 135,
+          "bicycle": 23,
+          "pedestrian": 686
+        },
+        "camera_labelled": {
+          "clusters": 1253,
+          "recall": 0.38719253604749787,
+          "precision_same_class": 0.704708699122107,
+          "f1": 0.49978503476175434,
+          "recall_by_class": {
+            "car": 0.413966882649388,
+            "truck": 0.31521739130434784,
+            "bus": 0.30303030303030304,
+            "motorcycle": 0.044444444444444446,
+            "bicycle": 0.08695652173913043,
+            "pedestrian": 0.42419825072886297
+          },
+          "recall_by_range": {
+            "0-20m": 0.5366766467065869,
+            "20-40m": 0.20374220374220375,
+            "40-50m": 0.0
+          }
+        }
+      },
+      "ekf_tracking": {
+        "measurement_noise": {
+          "scenes": [
+            "scene-0655"
+          ],
+          "samples": {
+            "lidar": 685,
+            "camera": 799,
+            "theta": 799
+          },
+          "sigma_range_lidar_m": {
+            "a": 0.527095979206764,
+            "b_per_m": 0.02479283436562161
+          },
+          "sigma_range_camera_m": {
+            "a": 2.000760934018827,
+            "b_per_m": 0.17912097784254788
+          },
+          "sigma_bearing_rad": 0.016946169171506455
+        },
+        "score_threshold": 0.3,
+        "match_distance_m": 2.0,
+        "max_range_m": 50.0,
+        "configs": {
+          "camera-only, no filter": {
+            "MOTA": -0.2505677517032552,
+            "IDF1": 0.24248927038626608,
+            "id_switches": 140,
+            "false_positives": 1270,
+            "misses": 1894,
+            "gt_detections": 2642,
+            "gt_tracks": 193,
+            "mostly_tracked": 14,
+            "bev_center_error_m": {
+              "n": 748,
+              "mean": 1.1188375109784805,
+              "median": 1.139971544035288
+            },
+            "velocity_error_mps": null
+          },
+          "camera-only, EKF": {
+            "MOTA": -0.20514761544284643,
+            "IDF1": 0.268695093207628,
+            "id_switches": 115,
+            "false_positives": 1226,
+            "misses": 1843,
+            "gt_detections": 2642,
+            "gt_tracks": 193,
+            "mostly_tracked": 10,
+            "bev_center_error_m": {
+              "n": 799,
+              "mean": 1.0431072802724803,
+              "median": 1.040766310076781
+            },
+            "velocity_error_mps": {
+              "n": 723,
+              "mean": 1.3313929592406275,
+              "median": 0.8496527751236885
+            }
+          },
+          "camera+LiDAR, no filter": {
+            "MOTA": 0.186222558667676,
+            "IDF1": 0.4404709986916703,
+            "id_switches": 146,
+            "false_positives": 653,
+            "misses": 1351,
+            "gt_detections": 2642,
+            "gt_tracks": 193,
+            "mostly_tracked": 30,
+            "bev_center_error_m": {
+              "n": 1291,
+              "mean": 0.6712037497530252,
+              "median": 0.551280190026631
+            },
+            "velocity_error_mps": null
+          },
+          "camera+LiDAR, EKF": {
+            "MOTA": 0.18016654049962155,
+            "IDF1": 0.43940714908456846,
+            "id_switches": 164,
+            "false_positives": 653,
+            "misses": 1349,
+            "gt_detections": 2642,
+            "gt_tracks": 193,
+            "mostly_tracked": 33,
+            "bev_center_error_m": {
+              "n": 1293,
+              "mean": 0.7294182828906456,
+              "median": 0.6414148529937455
+            },
+            "velocity_error_mps": {
+              "n": 1156,
+              "mean": 1.0058887582123697,
+              "median": 0.562642262063556
+            }
+          }
+        }
       },
       "tracking": {
         "bytetrack": {

@@ -24,6 +24,8 @@ import torch  # noqa: E402
 import ultralytics  # noqa: E402
 
 from adpb import nusc as N  # noqa: E402
+from adpb import ekf_tracking as E  # noqa: E402
+from adpb import lidar as LID  # noqa: E402
 from adpb.detection import Detector, default_device, evaluate_detection  # noqa: E402
 from adpb.localization import RANGES, evaluate_localization  # noqa: E402
 from adpb.tracking import evaluate_tracking  # noqa: E402
@@ -49,6 +51,11 @@ def evaluate_model(name: str, weights: str, imgsz: int, skip_tracking: bool) -> 
     print(f"[{name}] 3D localization ...", flush=True)
     out["localization"] = evaluate_localization(det, tokens)
     out["latency"] = det.benchmark_latency([N.image_path(nusc, t) for t in tokens])
+    dets = E.detections_for(det, test)
+    print(f"[{name}] LiDAR clustering + camera labels ...", flush=True)
+    out["lidar_clustering"] = LID.evaluate_scene_clusters(test, dets=dets)
+    print(f"[{name}] EKF 3D tracking ...", flush=True)
+    out["ekf_tracking"] = E.evaluate_ekf_tracking(det, dets, test, N.splits()["val"])
     if not skip_tracking:
         out["tracking"] = {}
         for trk in TRACKERS:
@@ -101,6 +108,42 @@ def write_markdown(res: dict) -> str:
             for t, x in r.get("tracking", {}).items():
                 L.append(f"| {m} | {t} | {fmt(x['MOTA'], 1)} | {fmt(x['IDF1'], 1)} | {x['id_switches']} | "
                          f"{x['false_positives']} | {x['misses']} | {x['gt_tracks']} | {x['mostly_tracked']} |")
+    first = next(iter(models.values()))
+    if "lidar_clustering" in first:
+        lc = first["lidar_clustering"]
+        prm = lc["params"]
+        L += ["", "## LiDAR segmentation (ground removal + DBSCAN, LiDAR only)", "",
+              f"{lc['sweeps']} LIDAR_TOP keyframe sweeps, {lc['gt_objects']} GT objects of the evaluated classes "
+              f"within {prm['max_range_m']:g} m with ≥ {prm['min_gt_lidar_points']} LiDAR points. "
+              f"DBSCAN eps {prm['eps']} m, min_samples {prm['min_samples']} (chosen on training scenes).", "",
+              "| Clusters | Recall % | Precision on annotated objects % | Over-segmented % | BEV centre error median / mean (m) | "
+              + " | ".join(f"Recall {k}" for k in lc["recall_by_range"]) + " |",
+              "|---|---|---|---|---|" + "---|" * len(lc["recall_by_range"]),
+              f"| {lc['clusters']} | {fmt(lc['recall'], 1)} | {fmt(lc['precision_on_annotated_objects'], 1)} | "
+              f"{fmt(lc['oversegmented_fraction'], 1)} | {fmt(lc['bev_center_error_m'].get('median'))} / "
+              f"{fmt(lc['bev_center_error_m'].get('mean'))} | "
+              + " | ".join(fmt(v, 1) for v in lc["recall_by_range"].values()) + " |",
+              "", "Recall by class: " + ", ".join(f"{c} {fmt(v, 1)} %" for c, v in lc["recall_by_class"].items()) + ".",
+              "", "### Camera-labelled clusters (late camera–LiDAR fusion)", "",
+              "| Model | Labelled clusters | Recall % (same class) | Precision % (same class) | "
+              + " | ".join(f"Recall {c}" for c in N.CLASSES) + " |",
+              "|---|---|---|---|" + "---|" * len(N.CLASSES)]
+        for m, r in models.items():
+            cl = r["lidar_clustering"]["camera_labelled"]
+            L.append(f"| {m} | {cl['clusters']} | {fmt(cl['recall'], 1)} | {fmt(cl['precision_same_class'], 1)} | "
+                     + " | ".join(fmt(cl["recall_by_class"][c], 1) for c in N.CLASSES) + " |")
+    if "ekf_tracking" in first:
+        L += ["", "## 3D multi-object tracking in the global frame (EKF, all 6 cameras fused, 2 Hz keyframes)", "",
+              "Matched to GT when the BEV centre distance is ≤ 2 m (same class). Measurement noise fitted on "
+              f"{', '.join(first['ekf_tracking']['measurement_noise']['scenes'])}.", "",
+              "| Model | Configuration | MOTA % | IDF1 % | ID switches | FP | Misses | BEV centre error median / mean (m) | Velocity error median (m/s) |",
+              "|---|---|---|---|---|---|---|---|---|"]
+        for m, r in models.items():
+            for c, x in r["ekf_tracking"]["configs"].items():
+                ve = x["velocity_error_mps"]
+                L.append(f"| {m} | {c} | {fmt(x['MOTA'], 1)} | {fmt(x['IDF1'], 1)} | {x['id_switches']} | "
+                         f"{x['false_positives']} | {x['misses']} | {fmt(x['bev_center_error_m'].get('median'))} / "
+                         f"{fmt(x['bev_center_error_m'].get('mean'))} | {fmt(ve['median']) if ve else '–'} |")
     L += ["", "## Latency (detector only, warm-up excluded)", "", "| Model | Device | Median ms | p95 ms |",
           "|---|---|---|---|"]
     for m, r in models.items():
@@ -112,7 +155,10 @@ def write_markdown(res: dict) -> str:
 def plot(res: dict, path: Path):
     models = res["models"]
     names = list(models)
-    fig, axs = plt.subplots(1, 3, figsize=(17, 4.8))
+    first = models[names[0]]
+    extra = "lidar_clustering" in first and "ekf_tracking" in first
+    fig, grid = plt.subplots(2 if extra else 1, 3, figsize=(17, 9.6 if extra else 4.8), squeeze=False)
+    axs = grid[0]
     x = range(len(N.CLASSES))
     w = 0.8 / len(names)
     for k, m in enumerate(names):
@@ -148,6 +194,32 @@ def plot(res: dict, path: Path):
         axs[2].set_ylabel("%")
         axs[2].set_title("Tracking")
         axs[2].legend()
+    if extra:
+        ax = grid[1][0]
+        bars = [("LiDAR clusters", first["lidar_clustering"]["recall"],
+                 first["lidar_clustering"]["precision_on_annotated_objects"])]
+        bars += [(f"camera-labelled\n{m.replace(' (', chr(10) + '(')}",
+                  models[m]["lidar_clustering"]["camera_labelled"]["recall"],
+                  models[m]["lidar_clustering"]["camera_labelled"]["precision_same_class"]) for m in names]
+        xi = range(len(bars))
+        ax.bar([i - 0.2 for i in xi], [100 * b[1] for b in bars], 0.4, label="recall")
+        ax.bar([i + 0.2 for i in xi], [100 * b[2] for b in bars], 0.4, label="precision")
+        ax.set_xticks(list(xi), [b[0] for b in bars], fontsize=8)
+        ax.set_ylabel("%")
+        ax.set_title("LiDAR segmentation (DBSCAN)")
+        ax.legend()
+
+        configs = list(first["ekf_tracking"]["configs"])
+        for ax, key, title in [(grid[1][1], "MOTA", "3D tracking MOTA (%)"), (grid[1][2], "IDF1", "3D tracking IDF1 (%)")]:
+            w2 = 0.8 / len(names)
+            for k, m in enumerate(names):
+                vals = [100 * models[m]["ekf_tracking"]["configs"][c][key] for c in configs]
+                ax.bar([i + k * w2 for i in range(len(configs))], vals, w2, label=m)
+            ax.set_xticks([i + w2 * (len(names) - 1) / 2 for i in range(len(configs))],
+                          [c.replace(", ", "\n") for c in configs], fontsize=8)
+            ax.axhline(0, color="k", lw=0.8)
+            ax.set_title(title)
+            ax.legend(fontsize=8)
     fig.suptitle(f"nuScenes v1.0-mini, test scenes {', '.join(res['split']['test'])}")
     fig.tight_layout()
     fig.savefig(path, dpi=130)
